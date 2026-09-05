@@ -1,0 +1,159 @@
+<section class="band">
+  <div class="wrap" data-filter>
+    <div class="filter reveal">
+      <div class="field">
+        <label for="portQ">Search ports</label>
+        <input id="portQ" type="search" data-filter-input placeholder="Nhava Sheva, INNSA, Rotterdam, Gulf…" autocomplete="off">
+      </div>
+      <div class="filter__chips" role="group" aria-label="Region">
+        <button type="button" data-filter-chip="all" aria-pressed="true">All</button>
+        <button type="button" data-filter-chip="india" aria-pressed="false">India</button>
+        <button type="button" data-filter-chip="gulf" aria-pressed="false">Middle East</button>
+        <button type="button" data-filter-chip="asia" aria-pressed="false">Asia Pacific</button>
+        <button type="button" data-filter-chip="europe" aria-pressed="false">Europe &amp; Med</button>
+        <button type="button" data-filter-chip="americas" aria-pressed="false">Americas</button>
+        <button type="button" data-filter-chip="africa" aria-pressed="false">Africa</button>
+      </div>
+    </div>
+    <p class="count reveal"><span data-filter-count></span> ports</p>
+
+    <div class="tblwrap reveal">
+      <table class="tbl">
+        <caption>Major ports on GML trade lanes</caption>
+        <thead><tr><th scope="col">UN/LOCODE</th><th scope="col">Port</th><th scope="col">Country</th><th scope="col">Region</th></tr></thead>
+        <tbody>
+          <tr data-row="innsa nhava sheva jnpt jawaharlal nehru mumbai india" data-group="india"><td class="code">INNSA</td><td><b>Nhava Sheva (JNPT)</b></td><td>India</td><td>India west coast</td></tr>
+          <tr data-row="inbom mumbai bombay mbpt india" data-group="india"><td class="code">INBOM</td><td><b>Mumbai</b></td><td>India</td><td>India west coast</td></tr>
+          <tr data-row="inmun mundra adani gujarat india" data-group="india"><td class="code">INMUN</td><td><b>Mundra</b></td><td>India</td><td>India west coast</td></tr>
+          <tr data-row="inixy kandla deendayal gujarat india" data-group="india"><td class="code">INIXY</td><td><b>Kandla</b></td><td>India</td><td>India west coast</td></tr>
+          <tr data-row="inpav pipavav gujarat india" data-group="india"><td class="code">INPAV</td><td><b>Pipavav</b></td><td>India</td><td>India west coast</td></tr>
+          <tr data-row="inhzr hazira surat gujarat india" data-group="india"><td class="code">INHZR</td><td><b>Hazira</b></td><td>India</td><td>India west coast</td></tr>
+          <tr data-row="inmaa chennai madras tamil nadu india" data-group="india"><td class="code">INMAA</td><td><b>Chennai</b></td><td>India</td><td>India east coast</td></tr>
+          <tr data-row="inenr ennore kamarajar chennai india" data-group="india"><td class="code">INENR</td><td><b>Ennore (Kamarajar)</b></td><td>India</td><td>India east coast</td></tr>
+          <tr data-row="intut tuticorin thoothukudi vo chidambaranar india" data-group="india"><td class="code">INTUT</td><td><b>Tuticorin</b></td><td>India</td><td>India east coast</td></tr>
+          <tr data-row="incok cochin kochi kerala india" data-group="india"><td class="code">INCOK</td><td><b>Cochin</b></td><td>India</td><td>India west coast</td></tr>
+          <tr data-row="inccu kolkata calcutta west bengal india" data-group="india"><td class="code">INCCU</td><td><b>Kolkata</b></td><td>India</td><td>India east coast</td></tr>
+          <tr data-row="invtz visakhapatnam vizag andhra india" data-group="india"><td class="code">INVTZ</td><td><b>Visakhapatnam</b></td><td>India</td><td>India east coast</td></tr>
+          <tr data-row="inkri krishnapatnam andhra india" data-group="india"><td class="code">INKRI</td><td><b>Krishnapatnam</b></td><td>India</td><td>India east coast</td></tr>
+          <tr data-row="inmrm mormugao goa india" data-group="india"><td class="code">INMRM</td><td><b>Mormugao</b></td><td>India</td><td>India west coast</td></tr>
+
+          <tr data-row="aejea jebel ali dubai uae gulf" data-group="gulf"><td class="code">AEJEA</td><td><b>Jebel Ali</b></td><td>United Arab Emirates</td><td>Arabian Gulf</td></tr>
+          <tr data-row="aeauh abu dhabi khalifa uae gulf" data-group="gulf"><td class="code">AEAUH</td><td><b>Abu Dhabi</b></td><td>United Arab Emirates</td><td>Arabian Gulf</td></tr>
+          <tr data-row="aeshj sharjah uae gulf" data-group="gulf"><td class="code">AESHJ</td><td><b>Sharjah</b></td><td>United Arab Emirates</td><td>Arabian Gulf</td></tr>
+          <tr data-row="omsll salalah oman" data-group="gulf"><td class="code">OMSLL</td><td><b>Salalah</b></td><td>Oman</td><td>Arabian Sea</td></tr>
+          <tr data-row="omsoh sohar oman" data-group="gulf"><td class="code">OMSOH</td><td><b>Sohar</b></td><td>Oman</td><td>Gulf of Oman</td></tr>
+          <tr data-row="kwkwi kuwait shuwaikh" data-group="gulf"><td class="code">KWKWI</td><td><b>Kuwait</b></td><td>Kuwait</td><td>Arabian Gulf</td></tr>
+          <tr data-row="sadmm dammam saudi arabia" data-group="gulf"><td class="code">SADMM</td><td><b>Dammam</b></td><td>Saudi Arabia</td><td>Arabian Gulf</td></tr>
+          <tr data-row="sajed jeddah saudi arabia red sea" data-group="gulf"><td class="code">SAJED</td><td><b>Jeddah</b></td><td>Saudi Arabia</td><td>Red Sea</td></tr>
+          <tr data-row="qahmd hamad doha qatar" data-group="gulf"><td class="code">QAHMD</td><td><b>Hamad</b></td><td>Qatar</td><td>Arabian Gulf</td></tr>
+          <tr data-row="bhkbs khalifa bin salman bahrain" data-group="gulf"><td class="code">BHKBS</td><td><b>Khalifa Bin Salman</b></td><td>Bahrain</td><td>Arabian Gulf</td></tr>
+          <tr data-row="irbnd bandar abbas iran" data-group="gulf"><td class="code">IRBND</td><td><b>Bandar Abbas</b></td><td>Iran</td><td>Arabian Gulf</td></tr>
+
+          <tr data-row="sgsin singapore psa transhipment" data-group="asia"><td class="code">SGSIN</td><td><b>Singapore</b></td><td>Singapore</td><td>South East Asia</td></tr>
+          <tr data-row="mypkg port klang malaysia" data-group="asia"><td class="code">MYPKG</td><td><b>Port Klang</b></td><td>Malaysia</td><td>South East Asia</td></tr>
+          <tr data-row="mytpp tanjung pelepas malaysia" data-group="asia"><td class="code">MYTPP</td><td><b>Tanjung Pelepas</b></td><td>Malaysia</td><td>South East Asia</td></tr>
+          <tr data-row="cnsha shanghai china" data-group="asia"><td class="code">CNSHA</td><td><b>Shanghai</b></td><td>China</td><td>North East Asia</td></tr>
+          <tr data-row="cnngb ningbo zhoushan china" data-group="asia"><td class="code">CNNGB</td><td><b>Ningbo</b></td><td>China</td><td>North East Asia</td></tr>
+          <tr data-row="cnszx shenzhen yantian shekou china" data-group="asia"><td class="code">CNSZX</td><td><b>Shenzhen</b></td><td>China</td><td>South China</td></tr>
+          <tr data-row="cntao qingdao china" data-group="asia"><td class="code">CNTAO</td><td><b>Qingdao</b></td><td>China</td><td>North China</td></tr>
+          <tr data-row="hkhkg hong kong" data-group="asia"><td class="code">HKHKG</td><td><b>Hong Kong</b></td><td>Hong Kong SAR</td><td>South China</td></tr>
+          <tr data-row="twkhh kaohsiung taiwan" data-group="asia"><td class="code">TWKHH</td><td><b>Kaohsiung</b></td><td>Taiwan</td><td>North East Asia</td></tr>
+          <tr data-row="krpus busan south korea" data-group="asia"><td class="code">KRPUS</td><td><b>Busan</b></td><td>South Korea</td><td>North East Asia</td></tr>
+          <tr data-row="jpyok yokohama japan" data-group="asia"><td class="code">JPYOK</td><td><b>Yokohama</b></td><td>Japan</td><td>North East Asia</td></tr>
+          <tr data-row="jpukb kobe japan" data-group="asia"><td class="code">JPUKB</td><td><b>Kobe</b></td><td>Japan</td><td>North East Asia</td></tr>
+          <tr data-row="thlch laem chabang thailand" data-group="asia"><td class="code">THLCH</td><td><b>Laem Chabang</b></td><td>Thailand</td><td>South East Asia</td></tr>
+          <tr data-row="vnsgn ho chi minh saigon cat lai vietnam" data-group="asia"><td class="code">VNSGN</td><td><b>Ho Chi Minh City</b></td><td>Vietnam</td><td>South East Asia</td></tr>
+          <tr data-row="vnhph haiphong vietnam" data-group="asia"><td class="code">VNHPH</td><td><b>Haiphong</b></td><td>Vietnam</td><td>South East Asia</td></tr>
+          <tr data-row="idtpp tanjung priok jakarta indonesia" data-group="asia"><td class="code">IDTPP</td><td><b>Tanjung Priok</b></td><td>Indonesia</td><td>South East Asia</td></tr>
+          <tr data-row="phmnl manila philippines" data-group="asia"><td class="code">PHMNL</td><td><b>Manila</b></td><td>Philippines</td><td>South East Asia</td></tr>
+          <tr data-row="lkcmb colombo sri lanka transhipment" data-group="asia"><td class="code">LKCMB</td><td><b>Colombo</b></td><td>Sri Lanka</td><td>South Asia</td></tr>
+          <tr data-row="bdcgp chittagong chattogram bangladesh" data-group="asia"><td class="code">BDCGP</td><td><b>Chittagong</b></td><td>Bangladesh</td><td>South Asia</td></tr>
+          <tr data-row="pkkhi karachi pakistan" data-group="asia"><td class="code">PKKHI</td><td><b>Karachi</b></td><td>Pakistan</td><td>South Asia</td></tr>
+          <tr data-row="ausyd sydney australia" data-group="asia"><td class="code">AUSYD</td><td><b>Sydney</b></td><td>Australia</td><td>Oceania</td></tr>
+          <tr data-row="aumel melbourne australia" data-group="asia"><td class="code">AUMEL</td><td><b>Melbourne</b></td><td>Australia</td><td>Oceania</td></tr>
+          <tr data-row="nzakl auckland new zealand" data-group="asia"><td class="code">NZAKL</td><td><b>Auckland</b></td><td>New Zealand</td><td>Oceania</td></tr>
+
+          <tr data-row="nlrtm rotterdam netherlands" data-group="europe"><td class="code">NLRTM</td><td><b>Rotterdam</b></td><td>Netherlands</td><td>North Europe</td></tr>
+          <tr data-row="beanr antwerp belgium" data-group="europe"><td class="code">BEANR</td><td><b>Antwerp</b></td><td>Belgium</td><td>North Europe</td></tr>
+          <tr data-row="deham hamburg germany" data-group="europe"><td class="code">DEHAM</td><td><b>Hamburg</b></td><td>Germany</td><td>North Europe</td></tr>
+          <tr data-row="debrv bremerhaven germany" data-group="europe"><td class="code">DEBRV</td><td><b>Bremerhaven</b></td><td>Germany</td><td>North Europe</td></tr>
+          <tr data-row="gbfxt felixstowe united kingdom" data-group="europe"><td class="code">GBFXT</td><td><b>Felixstowe</b></td><td>United Kingdom</td><td>North Europe</td></tr>
+          <tr data-row="gblgp london gateway united kingdom" data-group="europe"><td class="code">GBLGP</td><td><b>London Gateway</b></td><td>United Kingdom</td><td>North Europe</td></tr>
+          <tr data-row="frleh le havre france" data-group="europe"><td class="code">FRLEH</td><td><b>Le Havre</b></td><td>France</td><td>North Europe</td></tr>
+          <tr data-row="esvlc valencia spain" data-group="europe"><td class="code">ESVLC</td><td><b>Valencia</b></td><td>Spain</td><td>West Mediterranean</td></tr>
+          <tr data-row="esalg algeciras spain" data-group="europe"><td class="code">ESALG</td><td><b>Algeciras</b></td><td>Spain</td><td>West Mediterranean</td></tr>
+          <tr data-row="itgoa genoa genova italy" data-group="europe"><td class="code">ITGOA</td><td><b>Genoa</b></td><td>Italy</td><td>West Mediterranean</td></tr>
+          <tr data-row="itgit gioia tauro italy transhipment" data-group="europe"><td class="code">ITGIT</td><td><b>Gioia Tauro</b></td><td>Italy</td><td>Central Mediterranean</td></tr>
+          <tr data-row="grpir piraeus greece" data-group="europe"><td class="code">GRPIR</td><td><b>Piraeus</b></td><td>Greece</td><td>East Mediterranean</td></tr>
+          <tr data-row="trmer mersin turkey turkiye" data-group="europe"><td class="code">TRMER</td><td><b>Mersin</b></td><td>Türkiye</td><td>East Mediterranean</td></tr>
+          <tr data-row="tramb ambarli istanbul turkey turkiye" data-group="europe"><td class="code">TRAMB</td><td><b>Ambarli</b></td><td>Türkiye</td><td>East Mediterranean</td></tr>
+
+          <tr data-row="egpsd port said egypt suez" data-group="africa"><td class="code">EGPSD</td><td><b>Port Said</b></td><td>Egypt</td><td>Suez</td></tr>
+          <tr data-row="egaly alexandria egypt" data-group="africa"><td class="code">EGALY</td><td><b>Alexandria</b></td><td>Egypt</td><td>East Mediterranean</td></tr>
+          <tr data-row="zadur durban south africa" data-group="africa"><td class="code">ZADUR</td><td><b>Durban</b></td><td>South Africa</td><td>Southern Africa</td></tr>
+          <tr data-row="zacpt cape town south africa" data-group="africa"><td class="code">ZACPT</td><td><b>Cape Town</b></td><td>South Africa</td><td>Southern Africa</td></tr>
+          <tr data-row="kemba mombasa kenya" data-group="africa"><td class="code">KEMBA</td><td><b>Mombasa</b></td><td>Kenya</td><td>East Africa</td></tr>
+          <tr data-row="tzdar dar es salaam tanzania" data-group="africa"><td class="code">TZDAR</td><td><b>Dar es Salaam</b></td><td>Tanzania</td><td>East Africa</td></tr>
+          <tr data-row="ngapp apapa lagos nigeria" data-group="africa"><td class="code">NGAPP</td><td><b>Apapa (Lagos)</b></td><td>Nigeria</td><td>West Africa</td></tr>
+
+          <tr data-row="usnyc new york new jersey usa" data-group="americas"><td class="code">USNYC</td><td><b>New York / New Jersey</b></td><td>United States</td><td>US East Coast</td></tr>
+          <tr data-row="ussav savannah georgia usa" data-group="americas"><td class="code">USSAV</td><td><b>Savannah</b></td><td>United States</td><td>US East Coast</td></tr>
+          <tr data-row="uschs charleston south carolina usa" data-group="americas"><td class="code">USCHS</td><td><b>Charleston</b></td><td>United States</td><td>US East Coast</td></tr>
+          <tr data-row="usorf norfolk virginia usa" data-group="americas"><td class="code">USORF</td><td><b>Norfolk</b></td><td>United States</td><td>US East Coast</td></tr>
+          <tr data-row="ushou houston texas usa gulf" data-group="americas"><td class="code">USHOU</td><td><b>Houston</b></td><td>United States</td><td>US Gulf</td></tr>
+          <tr data-row="uslax los angeles california usa" data-group="americas"><td class="code">USLAX</td><td><b>Los Angeles</b></td><td>United States</td><td>US West Coast</td></tr>
+          <tr data-row="uslgb long beach california usa" data-group="americas"><td class="code">USLGB</td><td><b>Long Beach</b></td><td>United States</td><td>US West Coast</td></tr>
+          <tr data-row="usoak oakland california usa" data-group="americas"><td class="code">USOAK</td><td><b>Oakland</b></td><td>United States</td><td>US West Coast</td></tr>
+          <tr data-row="ussea seattle washington usa" data-group="americas"><td class="code">USSEA</td><td><b>Seattle</b></td><td>United States</td><td>US West Coast</td></tr>
+          <tr data-row="usmia miami florida usa" data-group="americas"><td class="code">USMIA</td><td><b>Miami</b></td><td>United States</td><td>US East Coast</td></tr>
+          <tr data-row="cavan vancouver british columbia canada" data-group="americas"><td class="code">CAVAN</td><td><b>Vancouver</b></td><td>Canada</td><td>Canada West</td></tr>
+          <tr data-row="camtr montreal quebec canada" data-group="americas"><td class="code">CAMTR</td><td><b>Montreal</b></td><td>Canada</td><td>Canada East</td></tr>
+          <tr data-row="cahal halifax nova scotia canada" data-group="americas"><td class="code">CAHAL</td><td><b>Halifax</b></td><td>Canada</td><td>Canada East</td></tr>
+          <tr data-row="mxzlo manzanillo mexico" data-group="americas"><td class="code">MXZLO</td><td><b>Manzanillo</b></td><td>Mexico</td><td>Mexico Pacific</td></tr>
+          <tr data-row="pablb balboa panama" data-group="americas"><td class="code">PABLB</td><td><b>Balboa</b></td><td>Panama</td><td>Central America</td></tr>
+          <tr data-row="brssz santos brazil" data-group="americas"><td class="code">BRSSZ</td><td><b>Santos</b></td><td>Brazil</td><td>South America East</td></tr>
+          <tr data-row="clsai san antonio chile" data-group="americas"><td class="code">CLSAI</td><td><b>San Antonio</b></td><td>Chile</td><td>South America West</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="empty" data-filter-empty hidden>No port matches that search.</p>
+
+    <p class="note reveal" style="margin-top:1.8rem"><strong>Codes are for reference, not for filing.</strong> UN/LOCODE assignments change, and several of these ports have more than one code for different terminals or for the airport in the same city. Confirm the code against the UN/LOCODE register or your carrier's booking note before it goes on a document.</p>
+  </div>
+</section>
+
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">Reading a LOCODE</p>
+        <h2 class="h2 reveal">Five letters, two halves</h2>
+      </div>
+      <div class="prose reveal">
+        <p>A UN/LOCODE is two letters of ISO country code followed by three letters for the place: <b>IN</b> + <b>NSA</b> for Nhava Sheva, <b>NL</b> + <b>RTM</b> for Rotterdam.</p>
+        <p>It is the identifier that ties a booking, a customs filing and a carrier's schedule to the same physical place, which matters more than it sounds &mdash; there are Springfields and Victorias on four continents, and a dozen ports called Puerto Nuevo.</p>
+        <ul>
+          <li>The same code covers the sea port and, often, the airport of a city &mdash; the function field in the register tells you which.</li>
+          <li>Large ports have separate codes for individual terminals; carriers may quote either.</li>
+          <li>Inland container depots and dry ports have their own codes, which is what makes door-to-door multimodal documentation work.</li>
+        </ul>
+        <a class="link-arrow" href="sailing-schedule.html">Ask for a schedule on your lane</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__inner">
+      <div>
+        <h2>Port not on the list?</h2>
+        <p>The list covers our main lanes. Our network reaches a great deal further &mdash; ask.</p>
+      </div>
+      <div class="cta__btns">
+        <a class="btn btn--solid btn--lg" href="contact.html#quote">Get Quote</a>
+        <a class="btn btn--line btn--lg" href="world-time.html">World Time</a>
+      </div>
+    </div>
+  </div>
+</section>

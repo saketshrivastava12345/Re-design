@@ -1,0 +1,186 @@
+<section class="band">
+  <div class="wrap" data-filter>
+    <div class="filter reveal">
+      <div class="field">
+        <label for="contQ">Search containers</label>
+        <input id="contQ" type="search" data-filter-input placeholder="20ft, reefer, flat rack, high cube…" autocomplete="off">
+      </div>
+      <div class="filter__chips" role="group" aria-label="Container family">
+        <button type="button" data-filter-chip="all" aria-pressed="true">All</button>
+        <button type="button" data-filter-chip="dry" aria-pressed="false">Dry</button>
+        <button type="button" data-filter-chip="reefer" aria-pressed="false">Reefer</button>
+        <button type="button" data-filter-chip="special" aria-pressed="false">Special</button>
+        <button type="button" data-filter-chip="tank" aria-pressed="false">Tank</button>
+      </div>
+    </div>
+    <p class="count reveal"><span data-filter-count></span> container types</p>
+
+    <div class="tblwrap reveal">
+      <table class="tbl">
+        <caption>Nominal ISO specifications — confirm against the unit's own data plate before booking</caption>
+        <thead>
+          <tr>
+            <th scope="col">Container</th>
+            <th scope="col">Internal L &times; W &times; H</th>
+            <th scope="col">Door opening W &times; H</th>
+            <th scope="col">Capacity</th>
+            <th scope="col">Tare</th>
+            <th scope="col">Max payload</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-row="20ft general purpose standard dry box gp" data-group="dry">
+            <td><b>20&prime; General Purpose</b><br><span class="code">20GP</span></td>
+            <td class="num">5.90 &times; 2.35 &times; 2.39 m</td>
+            <td class="num">2.34 &times; 2.28 m</td>
+            <td class="num">33.2 m&sup3;</td>
+            <td class="num">2,250 kg</td>
+            <td class="num">28,180 kg</td>
+          </tr>
+          <tr data-row="40ft general purpose standard dry box gp" data-group="dry">
+            <td><b>40&prime; General Purpose</b><br><span class="code">40GP</span></td>
+            <td class="num">12.03 &times; 2.35 &times; 2.39 m</td>
+            <td class="num">2.34 &times; 2.28 m</td>
+            <td class="num">67.7 m&sup3;</td>
+            <td class="num">3,750 kg</td>
+            <td class="num">26,730 kg</td>
+          </tr>
+          <tr data-row="40ft high cube hc dry volumetric light cargo" data-group="dry">
+            <td><b>40&prime; High Cube</b><br><span class="code">40HC</span></td>
+            <td class="num">12.03 &times; 2.35 &times; 2.69 m</td>
+            <td class="num">2.34 &times; 2.58 m</td>
+            <td class="num">76.3 m&sup3;</td>
+            <td class="num">3,900 kg</td>
+            <td class="num">26,580 kg</td>
+          </tr>
+          <tr data-row="45ft high cube hc pallet wide dry" data-group="dry">
+            <td><b>45&prime; High Cube</b><br><span class="code">45HC</span></td>
+            <td class="num">13.55 &times; 2.35 &times; 2.69 m</td>
+            <td class="num">2.34 &times; 2.58 m</td>
+            <td class="num">86.0 m&sup3;</td>
+            <td class="num">4,800 kg</td>
+            <td class="num">27,700 kg</td>
+          </tr>
+          <tr data-row="20ft reefer refrigerated temperature controlled cold chain" data-group="reefer">
+            <td><b>20&prime; Reefer</b><br><span class="code">20RF</span></td>
+            <td class="num">5.44 &times; 2.29 &times; 2.27 m</td>
+            <td class="num">2.29 &times; 2.26 m</td>
+            <td class="num">28.3 m&sup3;</td>
+            <td class="num">3,000 kg</td>
+            <td class="num">27,400 kg</td>
+          </tr>
+          <tr data-row="40ft reefer high cube refrigerated temperature controlled cold chain pharma" data-group="reefer">
+            <td><b>40&prime; Reefer High Cube</b><br><span class="code">40RH</span></td>
+            <td class="num">11.58 &times; 2.29 &times; 2.50 m</td>
+            <td class="num">2.29 &times; 2.49 m</td>
+            <td class="num">66.3 m&sup3;</td>
+            <td class="num">4,600 kg</td>
+            <td class="num">25,880 kg</td>
+          </tr>
+          <tr data-row="20ft open top ot tarpaulin over height crane loaded" data-group="special">
+            <td><b>20&prime; Open Top</b><br><span class="code">20OT</span></td>
+            <td class="num">5.89 &times; 2.34 &times; 2.35 m</td>
+            <td class="num">2.34 &times; 2.28 m</td>
+            <td class="num">32.4 m&sup3;</td>
+            <td class="num">2,350 kg</td>
+            <td class="num">28,080 kg</td>
+          </tr>
+          <tr data-row="40ft open top ot tarpaulin over height crane loaded" data-group="special">
+            <td><b>40&prime; Open Top</b><br><span class="code">40OT</span></td>
+            <td class="num">12.02 &times; 2.34 &times; 2.35 m</td>
+            <td class="num">2.34 &times; 2.28 m</td>
+            <td class="num">66.1 m&sup3;</td>
+            <td class="num">3,850 kg</td>
+            <td class="num">26,630 kg</td>
+          </tr>
+          <tr data-row="20ft flat rack fr collapsible out of gauge project heavy" data-group="special">
+            <td><b>20&prime; Flat Rack</b><br><span class="code">20FR</span></td>
+            <td class="num">5.62 &times; 2.20 &times; 2.23 m</td>
+            <td class="num">Open &mdash; no doors</td>
+            <td class="num">Out of gauge</td>
+            <td class="num">2,900 kg</td>
+            <td class="num">27,500 kg</td>
+          </tr>
+          <tr data-row="40ft flat rack fr collapsible out of gauge project heavy" data-group="special">
+            <td><b>40&prime; Flat Rack</b><br><span class="code">40FR</span></td>
+            <td class="num">12.08 &times; 2.38 &times; 2.10 m</td>
+            <td class="num">Open &mdash; no doors</td>
+            <td class="num">Out of gauge</td>
+            <td class="num">5,000 kg</td>
+            <td class="num">40,000 kg</td>
+          </tr>
+          <tr data-row="20ft ventilated coffee cargo breathing" data-group="special">
+            <td><b>20&prime; Ventilated</b><br><span class="code">20VH</span></td>
+            <td class="num">5.90 &times; 2.35 &times; 2.39 m</td>
+            <td class="num">2.34 &times; 2.28 m</td>
+            <td class="num">33.0 m&sup3;</td>
+            <td class="num">2,400 kg</td>
+            <td class="num">28,030 kg</td>
+          </tr>
+          <tr data-row="iso tank t11 gas chemical liquid bulk 25000 litres" data-group="tank">
+            <td><b>ISO Tank T11</b><br><span class="code">22T*</span></td>
+            <td class="num">6.06 &times; 2.44 &times; 2.59 m external</td>
+            <td class="num">Top &amp; bottom discharge</td>
+            <td class="num">25,000 L (&plusmn;3%)</td>
+            <td class="num">3,550&ndash;3,800 kg</td>
+            <td class="num">36,000 kg gross</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="empty" data-filter-empty hidden>No container matches that search.</p>
+  </div>
+</section>
+
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">Reading the table</p>
+        <h2 class="h2 reveal">Why the numbers on your booking may differ</h2>
+      </div>
+      <div class="prose reveal">
+        <p>These are nominal figures for the standard ISO types. Real boxes vary by manufacturer, age and owner, and two 40&prime; high cubes from different lessors will not have identical tares.</p>
+        <ul>
+          <li><b>Tare and payload are printed on the door.</b> The maximum payload is the box's rated gross weight minus its actual tare &mdash; always check the plate.</li>
+          <li><b>Road limits usually bite first.</b> A container rated for 28 tonnes may still be restricted to far less by the axle-load rules on the haulage leg.</li>
+          <li><b>Cubic capacity is not usable capacity.</b> Pallet footprint, stacking height and dunnage typically cost you 10&ndash;15% of the nominal cube.</li>
+          <li><b>VGM is mandatory.</b> Under SOLAS the verified gross mass must be declared before loading; we file it with the booking.</li>
+        </ul>
+        <a class="link-arrow" href="dimension-calculator.html">Work out what will fit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="eyebrow reveal">Choosing a box</p>
+      <h2 class="h2 reveal">Which container for which cargo</h2>
+    </div>
+    <div class="grid grid--3">
+      <article class="card reveal"><span class="card__no">Dry</span><h3>General purpose</h3><p>Almost everything. Choose a high cube when the cargo is light and bulky &mdash; the extra 30 cm of height is usually cheaper than a second box.</p></article>
+      <article class="card reveal"><span class="card__no">Reefer</span><h3>Temperature controlled</h3><p>Pharma, food and chemicals with a temperature range. Note the smaller internal cube: the machinery takes roughly half a metre of length.</p></article>
+      <article class="card reveal"><span class="card__no">Open top</span><h3>Over-height cargo</h3><p>When the cargo has to be craned in from above or stands taller than the door. Tarpaulin and bows in place of a fixed roof.</p></article>
+      <article class="card reveal"><span class="card__no">Flat rack</span><h3>Out-of-gauge</h3><p>Machinery, vehicles and anything wider than a box. Priced on out-of-gauge dimensions rather than on cube.</p></article>
+      <article class="card reveal"><span class="card__no">Ventilated</span><h3>Breathing cargo</h3><p>Coffee, cocoa and other cargo that sweats. Passive vents, not refrigeration.</p></article>
+      <article class="card reveal"><span class="card__no">Tank</span><h3>Liquid and gas in bulk</h3><p>T11 tanks for chemicals and gases, with dedicated empty yards at our import gateways. <a href="iso-tank.html">ISO Tank</a></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__inner">
+      <div>
+        <h2>Not sure which box you need?</h2>
+        <p>Send the dimensions and weight of one piece and the total quantity. We will tell you what fits.</p>
+      </div>
+      <div class="cta__btns">
+        <a class="btn btn--solid btn--lg" href="contact.html#quote">Get Quote</a>
+        <a class="btn btn--line btn--lg" href="dimension-calculator.html">Dimension Calculator</a>
+      </div>
+    </div>
+  </div>
+</section>

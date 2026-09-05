@@ -1,0 +1,110 @@
+<section class="band">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">The calculation</p>
+        <h2 class="h2 reveal">What you will actually be charged on</h2>
+        <p class="reveal" style="margin-top:1.2rem">Freight is charged on the greater of the real weight and the space the cargo occupies. This works out both, for sea and for air, using the same rules our quotes are built on.</p>
+      </div>
+
+      <form class="tool tool--calc reveal" id="calcForm" novalidate>
+        <h3 class="tool__ttl">Dimension Calculator</h3>
+        <div class="calc__row">
+          <div class="field"><label for="calcL">Length (cm)</label><input id="calcL" type="number" min="0" step="any" value="120"></div>
+          <div class="field"><label for="calcW">Width (cm)</label><input id="calcW" type="number" min="0" step="any" value="100"></div>
+          <div class="field"><label for="calcH">Height (cm)</label><input id="calcH" type="number" min="0" step="any" value="100"></div>
+        </div>
+        <div class="calc__row">
+          <div class="field"><label for="calcQty">Pieces</label><input id="calcQty" type="number" min="1" step="1" value="1"></div>
+          <div class="field"><label for="calcWt">Gross weight (kg)</label><input id="calcWt" type="number" min="0" step="any" value="250"></div>
+          <div class="field"><label for="calcMode">Mode</label>
+            <select id="calcMode"><option value="sea">Sea (1 CBM = 1000 kg)</option><option value="air">Air (IATA 1:6000)</option></select>
+          </div>
+        </div>
+        <output class="calc__out" id="calcOut" for="calcL calcW calcH calcQty calcWt calcMode"></output>
+        <p class="tool__hint">Dimensions are per piece and the total is multiplied by the number of pieces. Gross weight is the total for the consignment.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="eyebrow reveal">The rules behind it</p>
+      <h2 class="h2 reveal">Two divisors, one principle</h2>
+    </div>
+    <div class="grid grid--2">
+      <article class="card reveal">
+        <span class="card__no">Sea</span>
+        <h3>1 CBM = 1,000 kg</h3>
+        <p>LCL ocean freight is charged on the revenue tonne: whichever is greater, the volume in cubic metres or the weight in metric tonnes.</p>
+        <p><b>Volume</b> = L &times; W &times; H (cm) &divide; 1,000,000 &times; pieces<br>
+           <b>Volumetric weight</b> = CBM &times; 1,000 kg</p>
+        <p>Dense cargo is charged on weight; light, bulky cargo on volume.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card__no">Air</span>
+        <h3>IATA divisor 6,000</h3>
+        <p>Air freight uses the IATA volumetric divisor of 6,000 cm&sup3; per kilogram.</p>
+        <p><b>Volumetric weight</b> = L &times; W &times; H (cm) &divide; 6,000 &times; pieces</p>
+        <p>A 120 &times; 100 &times; 100 cm piece is 200 kg volumetric no matter what it weighs on the scale.</p>
+      </article>
+    </div>
+    <p class="note reveal" style="margin-top:1.8rem"><strong>This is an estimate, not a quotation.</strong> Carriers round up, some lanes apply a different divisor by contract, and surcharges are outside this calculation. Use it to size the shipment and to sanity-check a rate &mdash; then <a href="contact.html#quote">ask for the real number</a>.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">Getting the number down</p>
+        <h2 class="h2 reveal">Four things that change the answer</h2>
+      </div>
+      <div class="reveal">
+        <ol class="steps">
+          <li>
+            <div>
+              <h3>Measure the outside, not the goods</h3>
+              <p>Carriers measure the outermost point of the packed piece, pallet feet and shrink wrap included. A pallet overhang of two centimetres on each side is chargeable volume.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Check whether stacking is allowed</h3>
+              <p>A pallet marked do-not-stack is charged on the full height to the roof of the container or ULD, not on its own height. If your cargo can take a top load, say so.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Compare against a full container</h3>
+              <p>Once your CBM approaches half a box, run the FCL numbers. Our <a href="containers.html">container table</a> has the usable cube for every standard type.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Split by density, not by order</h3>
+              <p>On a mixed consignment, the heavy items decide the sea charge and the bulky items decide the air charge. Splitting them across modes sometimes beats sending everything one way.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__inner">
+      <div>
+        <h2>Got your chargeable weight?</h2>
+        <p>Send it with the lane and the commodity, and we will quote against it.</p>
+      </div>
+      <div class="cta__btns">
+        <a class="btn btn--solid btn--lg" href="contact.html#quote">Get Quote</a>
+        <a class="btn btn--line btn--lg" href="containers.html">Set of Containers</a>
+      </div>
+    </div>
+  </div>
+</section>

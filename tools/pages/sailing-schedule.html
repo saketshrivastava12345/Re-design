@@ -1,0 +1,101 @@
+<section class="band">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">Request a schedule</p>
+        <h2 class="h2 reveal">Tell us the lane and the week</h2>
+        <p class="reveal" style="margin-top:1.2rem">The booking desk replies with the departures on your lane, the CFS and documentation cut-offs, the transit time and the transhipment ports &mdash; confirmed against live allocation rather than a printed timetable.</p>
+      </div>
+
+      <form class="tool reveal" id="schedForm" novalidate
+            data-mailto="info@gmlindia.net" data-subject="Sailing schedule request">
+        <h3 class="tool__ttl">Schedule request</h3>
+
+        <div class="qform__row">
+          <div class="field"><label for="sPol">Port of loading</label>
+            <input id="sPol" name="Port of loading" data-label="Port of loading" type="text" required placeholder="e.g. Nhava Sheva"></div>
+          <div class="field"><label for="sPod">Port of discharge</label>
+            <input id="sPod" name="Port of discharge" data-label="Port of discharge" type="text" required placeholder="e.g. Jebel Ali"></div>
+        </div>
+
+        <div class="qform__row">
+          <div class="field"><label for="sMode">Service</label>
+            <select id="sMode" name="Service" data-label="Service">
+              <option>LCL</option><option>FCL</option><option>Air</option><option>ISO TANK</option><option>Breakbulk / Project</option>
+            </select>
+          </div>
+          <div class="field"><label for="sWeek">Week of shipment</label>
+            <input id="sWeek" name="Week of shipment" data-label="Week of shipment" type="date"></div>
+        </div>
+
+        <div class="field"><label for="sCargo">Cargo &amp; volume</label>
+          <textarea id="sCargo" name="Cargo and volume" data-label="Cargo and volume" rows="3" placeholder="Commodity, number of pieces, CBM or container count, hazardous class if any"></textarea></div>
+
+        <div class="qform__row">
+          <div class="field"><label for="sName">Name</label>
+            <input id="sName" name="Name" data-label="Name" type="text" required autocomplete="name"></div>
+          <div class="field"><label for="sCompany">Company</label>
+            <input id="sCompany" name="Company" data-label="Company" type="text" autocomplete="organization"></div>
+        </div>
+        <div class="qform__row">
+          <div class="field"><label for="sEmail">Email</label>
+            <input id="sEmail" name="Email" data-label="Email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="sMobile">Mobile</label>
+            <input id="sMobile" name="Mobile" data-label="Mobile" type="tel" autocomplete="tel"></div>
+        </div>
+
+        <p class="tool__err" data-form-err role="alert" hidden></p>
+        <button class="btn btn--solid btn--full" type="submit">Request schedule</button>
+        <p class="tool__hint">Opens your email client addressed to info@gmlindia.net with the details above.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">Why we do not publish a timetable</p>
+        <h2 class="h2 reveal">A printed schedule is out of date before it loads</h2>
+      </div>
+      <div class="prose reveal">
+        <p>Sailing schedules move constantly. Vessels are omitted, rotations are changed, blank sailings are declared at a week's notice and transhipment connections slip. A published table would be wrong often enough to be worse than nothing &mdash; and the one time it mattered, it would be wrong then too.</p>
+        <p>What the desk sends you instead is the current position on your specific lane: which vessels are open, what the CFS cut-off is, what the documentation cut-off is, and where the box transships. That is the information a booking is actually made on.</p>
+        <p><b>1650 destinations are serviced by LCL weekly</b>, so for most lanes the answer is a choice of departures rather than a single option.</p>
+        <a class="link-arrow" href="ocean-cargo.html">Ocean Cargo services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="eyebrow reveal">What the reply contains</p>
+      <h2 class="h2 reveal">Everything you need to fix a booking</h2>
+    </div>
+    <ol class="steps reveal">
+      <li><div><h3>Vessel and voyage</h3><p>The named vessel, voyage number and the carrier operating the service.</p></div></li>
+      <li><div><h3>ETD, ETA and transit</h3><p>Departure and arrival dates, the transit time in days, and the transhipment port where there is one.</p></div></li>
+      <li><div><h3>Cut-offs</h3><p>CFS or gate-in cut-off, documentation cut-off and VGM cut-off &mdash; the three deadlines that decide whether cargo sails.</p></div></li>
+      <li><div><h3>Rate and validity</h3><p>Where a rate is requested with the schedule, the all-in freight and the date it is valid until.</p></div></li>
+    </ol>
+    <p class="note reveal" style="margin-top:2rem"><strong>Need it today?</strong> Call <a href="tel:+912261489999">+91 22 6148 9999</a> or <a href="tel:+912261489910">+91 22 6148 9910</a>. Schedule enquiries on the main lanes are usually answered while you are on the line.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__inner">
+      <div>
+        <h2>Ready to book instead?</h2>
+        <p>Send the full enquiry and we will come back with the schedule and the rate together.</p>
+      </div>
+      <div class="cta__btns">
+        <a class="btn btn--solid btn--lg" href="contact.html#quote">Get Quote</a>
+        <a class="btn btn--line btn--lg" href="world-ports.html">World Ports</a>
+      </div>
+    </div>
+  </div>
+</section>

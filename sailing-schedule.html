@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sailing Schedule — Request a schedule</title>
+<meta name="description" content="Request a sailing schedule for any GML India trade lane. Ocean, air and ISO tank departures confirmed by our booking desk.">
+<meta name="theme-color" content="#0A1420">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sailing Schedule — Request a schedule">
+<meta property="og:description" content="Request a sailing schedule for any GML India trade lane. Ocean, air and ISO tank departures confirmed by our booking desk.">
+<meta property="og:image" content="assets/frames/poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body class="page">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================ HEADER ============================ -->
+<header class="hdr" id="hdr">
+  <div class="hdr__inner">
+    <a class="brand" href="index.html" aria-label="Greenwich Meridian Logistics India — home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+          <path d="M20 2v36" stroke="currentColor" stroke-width="1.4"/>
+          <ellipse cx="20" cy="20" rx="8.4" ry="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+          <path d="M2.6 13.4h34.8M2.6 26.6h34.8" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+        </svg>
+      </span>
+      <span class="brand__txt">
+        <strong>GML<em>INDIA</em></strong>
+        <small>Greenwich Meridian Logistics</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+
+        <li class="nav__item has-menu">
+          <button class="nav__link nav__trigger" aria-expanded="false" aria-controls="menu-about">About Us<i aria-hidden="true"></i></button>
+          <div class="mega mega--sm" id="menu-about">
+            <ul class="mega__list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="directors-note.html">Director's Note</a></li>
+              <li><a href="incorporation.html">GML Incorporation</a></li>
+              <li><a href="associates.html">Associates</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav__item has-menu">
+          <button class="nav__link nav__trigger" aria-expanded="false" aria-controls="menu-services">Services<i aria-hidden="true"></i></button>
+          <div class="mega" id="menu-services">
+            <div class="mega__grid">
+              <a class="mega__card" href="ocean-cargo.html">
+                <span class="mega__no">01</span><span class="mega__ttl">Ocean Cargo</span>
+                <span class="mega__sub">LCL &middot; FCL &middot; NVOCC &middot; CFS</span>
+              </a>
+              <a class="mega__card" href="air-cargo.html">
+                <span class="mega__no">02</span><span class="mega__ttl">Air Cargo</span>
+                <span class="mega__sub">Door deliveries &middot; Ex-works &middot; Custom clearance</span>
+              </a>
+              <a class="mega__card" href="iso-tank.html">
+                <span class="mega__no">03</span><span class="mega__ttl">ISO Tank</span>
+                <span class="mega__sub">Nhava-Sheva &middot; Mundra &middot; Chennai</span>
+              </a>
+              <a class="mega__card" href="project-cargo.html">
+                <span class="mega__no">04</span><span class="mega__ttl">Project Cargo</span>
+                <span class="mega__sub">Heavy international logistics of every size</span>
+              </a>
+              <a class="mega__card" href="hazardous-cargo.html">
+                <span class="mega__no">05</span><span class="mega__ttl">Hazardous Cargo</span>
+                <span class="mega__sub">All nine classes &middot; sea, surface and air</span>
+              </a>
+              <a class="mega__card" href="services.html">
+                <span class="mega__no">&mdash;</span><span class="mega__ttl">What We Do</span>
+                <span class="mega__sub">The full service overview</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav__item has-menu">
+          <button class="nav__link nav__trigger" aria-expanded="false" aria-controls="menu-tools">Instruments<i aria-hidden="true"></i></button>
+          <div class="mega mega--sm" id="menu-tools">
+            <ul class="mega__list">
+              <li><a href="dimension-calculator.html">Dimension Calculator</a></li>
+              <li><a href="world-time.html">World Time</a></li>
+              <li><a href="world-ports.html">World Ports</a></li>
+              <li><a href="currency-converter.html">Currency converter</a></li>
+              <li><a href="containers.html">Set of Containers</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li><a href="sailing-schedule.html" aria-current="page" class="nav__link">Sailing Schedule</a></li>
+        <li><a href="careers.html" class="nav__link">Career</a></li>
+
+        <li class="nav__item has-menu">
+          <button class="nav__link nav__trigger" aria-expanded="false" aria-controls="menu-contact">Contact Us<i aria-hidden="true"></i></button>
+          <div class="mega mega--sm" id="menu-contact">
+            <ul class="mega__list">
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="locations.html">Our Locations</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="hdr__cta">
+      <a class="btn btn--ghost" href="tracking.html">Tracking</a>
+      <a class="btn btn--solid" href="contact.html#quote">Get Quote</a>
+    </div>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== MOBILE NAVIGATION ===================== -->
+<div class="mnav" id="mnav" hidden>
+  <nav class="mnav__inner" aria-label="Mobile">
+    <a class="mnav__top" href="index.html">Home</a>
+
+    <details class="mnav__grp"><summary>About Us</summary>
+      <a href="about.html">About Us</a>
+      <a href="directors-note.html">Director's Note</a>
+      <a href="incorporation.html">GML Incorporation</a>
+      <a href="associates.html">Associates</a>
+    </details>
+
+    <details class="mnav__grp"><summary>Services</summary>
+      <a href="services.html">What We Do</a>
+      <a href="ocean-cargo.html">Ocean Cargo</a>
+      <a href="air-cargo.html">Air Cargo</a>
+      <a href="iso-tank.html">ISO Tank</a>
+      <a href="project-cargo.html">Project Cargo</a>
+      <a href="hazardous-cargo.html">Hazardous Cargo</a>
+    </details>
+
+    <details class="mnav__grp"><summary>Instruments</summary>
+      <a href="dimension-calculator.html">Dimension Calculator</a>
+      <a href="world-time.html">World Time</a>
+      <a href="world-ports.html">World Ports</a>
+      <a href="currency-converter.html">Currency converter</a>
+      <a href="containers.html">Set of Containers</a>
+    </details>
+
+    <a class="mnav__top" href="sailing-schedule.html" aria-current="page">Sailing Schedule</a>
+    <a class="mnav__top" href="careers.html">Career</a>
+
+    <details class="mnav__grp"><summary>Contact Us</summary>
+      <a href="contact.html">Contact Us</a>
+      <a href="locations.html">Our Locations</a>
+    </details>
+
+    <div class="mnav__cta">
+      <a class="btn btn--ghost" href="tracking.html">Tracking</a>
+      <a class="btn btn--solid" href="contact.html#quote">Get Quote</a>
+    </div>
+    <a class="mnav__call" href="tel:+912261489999">Call For Support! +91 22 6148 9999</a>
+  </nav>
+</div>
+
+<main id="main">
+
+<!-- ============================== HERO ============================== -->
+<section class="phero">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Sailing Schedule</li>
+      </ol>
+    </nav>
+    <p class="eyebrow">Sailing Schedule</p>
+    <h1 class="phero__h1">Sailing Schedule</h1>
+    <p class="phero__lede">Tell us the lane and the week, and our booking desk sends back the live schedule with cut-offs.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">Request a schedule</p>
+        <h2 class="h2 reveal">Tell us the lane and the week</h2>
+        <p class="reveal" style="margin-top:1.2rem">The booking desk replies with the departures on your lane, the CFS and documentation cut-offs, the transit time and the transhipment ports &mdash; confirmed against live allocation rather than a printed timetable.</p>
+      </div>
+
+      <form class="tool reveal" id="schedForm" novalidate
+            data-mailto="info@gmlindia.net" data-subject="Sailing schedule request">
+        <h3 class="tool__ttl">Schedule request</h3>
+
+        <div class="qform__row">
+          <div class="field"><label for="sPol">Port of loading</label>
+            <input id="sPol" name="Port of loading" data-label="Port of loading" type="text" required placeholder="e.g. Nhava Sheva"></div>
+          <div class="field"><label for="sPod">Port of discharge</label>
+            <input id="sPod" name="Port of discharge" data-label="Port of discharge" type="text" required placeholder="e.g. Jebel Ali"></div>
+        </div>
+
+        <div class="qform__row">
+          <div class="field"><label for="sMode">Service</label>
+            <select id="sMode" name="Service" data-label="Service">
+              <option>LCL</option><option>FCL</option><option>Air</option><option>ISO TANK</option><option>Breakbulk / Project</option>
+            </select>
+          </div>
+          <div class="field"><label for="sWeek">Week of shipment</label>
+            <input id="sWeek" name="Week of shipment" data-label="Week of shipment" type="date"></div>
+        </div>
+
+        <div class="field"><label for="sCargo">Cargo &amp; volume</label>
+          <textarea id="sCargo" name="Cargo and volume" data-label="Cargo and volume" rows="3" placeholder="Commodity, number of pieces, CBM or container count, hazardous class if any"></textarea></div>
+
+        <div class="qform__row">
+          <div class="field"><label for="sName">Name</label>
+            <input id="sName" name="Name" data-label="Name" type="text" required autocomplete="name"></div>
+          <div class="field"><label for="sCompany">Company</label>
+            <input id="sCompany" name="Company" data-label="Company" type="text" autocomplete="organization"></div>
+        </div>
+        <div class="qform__row">
+          <div class="field"><label for="sEmail">Email</label>
+            <input id="sEmail" name="Email" data-label="Email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="sMobile">Mobile</label>
+            <input id="sMobile" name="Mobile" data-label="Mobile" type="tel" autocomplete="tel"></div>
+        </div>
+
+        <p class="tool__err" data-form-err role="alert" hidden></p>
+        <button class="btn btn--solid btn--full" type="submit">Request schedule</button>
+        <p class="tool__hint">Opens your email client addressed to info@gmlindia.net with the details above.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">Why we do not publish a timetable</p>
+        <h2 class="h2 reveal">A printed schedule is out of date before it loads</h2>
+      </div>
+      <div class="prose reveal">
+        <p>Sailing schedules move constantly. Vessels are omitted, rotations are changed, blank sailings are declared at a week's notice and transhipment connections slip. A published table would be wrong often enough to be worse than nothing &mdash; and the one time it mattered, it would be wrong then too.</p>
+        <p>What the desk sends you instead is the current position on your specific lane: which vessels are open, what the CFS cut-off is, what the documentation cut-off is, and where the box transships. That is the information a booking is actually made on.</p>
+        <p><b>1650 destinations are serviced by LCL weekly</b>, so for most lanes the answer is a choice of departures rather than a single option.</p>
+        <a class="link-arrow" href="ocean-cargo.html">Ocean Cargo services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="eyebrow reveal">What the reply contains</p>
+      <h2 class="h2 reveal">Everything you need to fix a booking</h2>
+    </div>
+    <ol class="steps reveal">
+      <li><div><h3>Vessel and voyage</h3><p>The named vessel, voyage number and the carrier operating the service.</p></div></li>
+      <li><div><h3>ETD, ETA and transit</h3><p>Departure and arrival dates, the transit time in days, and the transhipment port where there is one.</p></div></li>
+      <li><div><h3>Cut-offs</h3><p>CFS or gate-in cut-off, documentation cut-off and VGM cut-off &mdash; the three deadlines that decide whether cargo sails.</p></div></li>
+      <li><div><h3>Rate and validity</h3><p>Where a rate is requested with the schedule, the all-in freight and the date it is valid until.</p></div></li>
+    </ol>
+    <p class="note reveal" style="margin-top:2rem"><strong>Need it today?</strong> Call <a href="tel:+912261489999">+91 22 6148 9999</a> or <a href="tel:+912261489910">+91 22 6148 9910</a>. Schedule enquiries on the main lanes are usually answered while you are on the line.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__inner">
+      <div>
+        <h2>Ready to book instead?</h2>
+        <p>Send the full enquiry and we will come back with the schedule and the rate together.</p>
+      </div>
+      <div class="cta__btns">
+        <a class="btn btn--solid btn--lg" href="contact.html#quote">Get Quote</a>
+        <a class="btn btn--line btn--lg" href="world-ports.html">World Ports</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================== FOOTER =========================== -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__top">
+      <div class="ftr__brand">
+        <a class="brand brand--ftr" href="index.html">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+          <path d="M20 2v36" stroke="currentColor" stroke-width="1.4"/>
+          <ellipse cx="20" cy="20" rx="8.4" ry="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+          <path d="M2.6 13.4h34.8M2.6 26.6h34.8" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+        </svg>
+          </span>
+          <span class="brand__txt"><strong>GML<em>INDIA</em></strong><small>Greenwich Meridian Logistics</small></span>
+        </a>
+        <p class="ftr__desc">Greenwich Meridian Logistics (India) Pvt. Ltd is one of the leading global logistics companies headquartered in Mumbai, India. Founded in 2002.</p>
+        <a class="btn btn--line" href="company-profile.html">Download GML Profile</a>
+      </div>
+
+      <nav class="ftr__nav" aria-label="Footer">
+        <div class="ftr__col">
+          <h3>About Us</h3>
+          <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="directors-note.html">Director's Note</a></li>
+              <li><a href="incorporation.html">GML Incorporation</a></li>
+              <li><a href="associates.html">Associates</a></li>
+          </ul>
+        </div>
+        <div class="ftr__col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="ocean-cargo.html">Ocean Cargo</a></li>
+            <li><a href="air-cargo.html">Air Cargo</a></li>
+            <li><a href="iso-tank.html">ISO Tank</a></li>
+            <li><a href="project-cargo.html">Project Cargo</a></li>
+            <li><a href="hazardous-cargo.html">Hazardous Cargo</a></li>
+          </ul>
+        </div>
+        <div class="ftr__col">
+          <h3>Instruments</h3>
+          <ul>
+              <li><a href="dimension-calculator.html">Dimension Calculator</a></li>
+              <li><a href="world-time.html">World Time</a></li>
+              <li><a href="world-ports.html">World Ports</a></li>
+              <li><a href="currency-converter.html">Currency converter</a></li>
+              <li><a href="containers.html">Set of Containers</a></li>
+          </ul>
+        </div>
+        <div class="ftr__col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="sailing-schedule.html">Sailing Schedule</a></li>
+            <li><a href="careers.html">Career</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="locations.html">Our Locations</a></li>
+            <li><a href="warehousing.html">Warehousing</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="ftr__mid">
+      <div>
+        <h3>Head Office</h3>
+        <address>504, Shrishti Plaza, Behind Amar Tara Plastics, Saki &ndash; Vihar Road,<br>Powai, Andheri (E), Mumbai 400 072, India.</address>
+      </div>
+      <div>
+        <h3>Quick Contact</h3>
+        <p><a href="tel:+912261489999">+91 22 6148 9999</a> &middot; <a href="tel:+912261489910">+91 22 6148 9910</a><br><a href="mailto:info@gmlindia.net">info@gmlindia.net</a></p>
+      </div>
+    </div>
+
+    <div class="ftr__btm">
+      <p>&copy; <span id="yr">2026</span> Greenwich Meridian Logistics (India) Pvt. Ltd. All rights reserved.</p>
+      <ul>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/pages.js" defer></script>
+</body>
+</html>

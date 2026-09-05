@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dimension Calculator — CBM and chargeable weight</title>
+<meta name="description" content="Work out volume, volumetric weight and chargeable weight for sea and air shipments using the GML India dimension calculator.">
+<meta name="theme-color" content="#0A1420">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dimension Calculator — CBM and chargeable weight">
+<meta property="og:description" content="Work out volume, volumetric weight and chargeable weight for sea and air shipments using the GML India dimension calculator.">
+<meta property="og:image" content="assets/frames/poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body class="page">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================ HEADER ============================ -->
+<header class="hdr" id="hdr">
+  <div class="hdr__inner">
+    <a class="brand" href="index.html" aria-label="Greenwich Meridian Logistics India — home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+          <path d="M20 2v36" stroke="currentColor" stroke-width="1.4"/>
+          <ellipse cx="20" cy="20" rx="8.4" ry="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+          <path d="M2.6 13.4h34.8M2.6 26.6h34.8" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+        </svg>
+      </span>
+      <span class="brand__txt">
+        <strong>GML<em>INDIA</em></strong>
+        <small>Greenwich Meridian Logistics</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+
+        <li class="nav__item has-menu">
+          <button class="nav__link nav__trigger" aria-expanded="false" aria-controls="menu-about">About Us<i aria-hidden="true"></i></button>
+          <div class="mega mega--sm" id="menu-about">
+            <ul class="mega__list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="directors-note.html">Director's Note</a></li>
+              <li><a href="incorporation.html">GML Incorporation</a></li>
+              <li><a href="associates.html">Associates</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav__item has-menu">
+          <button class="nav__link nav__trigger" aria-expanded="false" aria-controls="menu-services">Services<i aria-hidden="true"></i></button>
+          <div class="mega" id="menu-services">
+            <div class="mega__grid">
+              <a class="mega__card" href="ocean-cargo.html">
+                <span class="mega__no">01</span><span class="mega__ttl">Ocean Cargo</span>
+                <span class="mega__sub">LCL &middot; FCL &middot; NVOCC &middot; CFS</span>
+              </a>
+              <a class="mega__card" href="air-cargo.html">
+                <span class="mega__no">02</span><span class="mega__ttl">Air Cargo</span>
+                <span class="mega__sub">Door deliveries &middot; Ex-works &middot; Custom clearance</span>
+              </a>
+              <a class="mega__card" href="iso-tank.html">
+                <span class="mega__no">03</span><span class="mega__ttl">ISO Tank</span>
+                <span class="mega__sub">Nhava-Sheva &middot; Mundra &middot; Chennai</span>
+              </a>
+              <a class="mega__card" href="project-cargo.html">
+                <span class="mega__no">04</span><span class="mega__ttl">Project Cargo</span>
+                <span class="mega__sub">Heavy international logistics of every size</span>
+              </a>
+              <a class="mega__card" href="hazardous-cargo.html">
+                <span class="mega__no">05</span><span class="mega__ttl">Hazardous Cargo</span>
+                <span class="mega__sub">All nine classes &middot; sea, surface and air</span>
+              </a>
+              <a class="mega__card" href="services.html">
+                <span class="mega__no">&mdash;</span><span class="mega__ttl">What We Do</span>
+                <span class="mega__sub">The full service overview</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav__item has-menu">
+          <button class="nav__link nav__trigger" aria-expanded="false" aria-controls="menu-tools">Instruments<i aria-hidden="true"></i></button>
+          <div class="mega mega--sm" id="menu-tools">
+            <ul class="mega__list">
+              <li><a href="dimension-calculator.html" aria-current="page">Dimension Calculator</a></li>
+              <li><a href="world-time.html">World Time</a></li>
+              <li><a href="world-ports.html">World Ports</a></li>
+              <li><a href="currency-converter.html">Currency converter</a></li>
+              <li><a href="containers.html">Set of Containers</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li><a href="sailing-schedule.html" class="nav__link">Sailing Schedule</a></li>
+        <li><a href="careers.html" class="nav__link">Career</a></li>
+
+        <li class="nav__item has-menu">
+          <button class="nav__link nav__trigger" aria-expanded="false" aria-controls="menu-contact">Contact Us<i aria-hidden="true"></i></button>
+          <div class="mega mega--sm" id="menu-contact">
+            <ul class="mega__list">
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="locations.html">Our Locations</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="hdr__cta">
+      <a class="btn btn--ghost" href="tracking.html">Tracking</a>
+      <a class="btn btn--solid" href="contact.html#quote">Get Quote</a>
+    </div>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== MOBILE NAVIGATION ===================== -->
+<div class="mnav" id="mnav" hidden>
+  <nav class="mnav__inner" aria-label="Mobile">
+    <a class="mnav__top" href="index.html">Home</a>
+
+    <details class="mnav__grp"><summary>About Us</summary>
+      <a href="about.html">About Us</a>
+      <a href="directors-note.html">Director's Note</a>
+      <a href="incorporation.html">GML Incorporation</a>
+      <a href="associates.html">Associates</a>
+    </details>
+
+    <details class="mnav__grp"><summary>Services</summary>
+      <a href="services.html">What We Do</a>
+      <a href="ocean-cargo.html">Ocean Cargo</a>
+      <a href="air-cargo.html">Air Cargo</a>
+      <a href="iso-tank.html">ISO Tank</a>
+      <a href="project-cargo.html">Project Cargo</a>
+      <a href="hazardous-cargo.html">Hazardous Cargo</a>
+    </details>
+
+    <details class="mnav__grp"><summary>Instruments</summary>
+      <a href="dimension-calculator.html" aria-current="page">Dimension Calculator</a>
+      <a href="world-time.html">World Time</a>
+      <a href="world-ports.html">World Ports</a>
+      <a href="currency-converter.html">Currency converter</a>
+      <a href="containers.html">Set of Containers</a>
+    </details>
+
+    <a class="mnav__top" href="sailing-schedule.html">Sailing Schedule</a>
+    <a class="mnav__top" href="careers.html">Career</a>
+
+    <details class="mnav__grp"><summary>Contact Us</summary>
+      <a href="contact.html">Contact Us</a>
+      <a href="locations.html">Our Locations</a>
+    </details>
+
+    <div class="mnav__cta">
+      <a class="btn btn--ghost" href="tracking.html">Tracking</a>
+      <a class="btn btn--solid" href="contact.html#quote">Get Quote</a>
+    </div>
+    <a class="mnav__call" href="tel:+912261489999">Call For Support! +91 22 6148 9999</a>
+  </nav>
+</div>
+
+<main id="main">
+
+<!-- ============================== HERO ============================== -->
+<section class="phero">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Dimension Calculator</li>
+      </ol>
+    </nav>
+    <p class="eyebrow">Instruments</p>
+    <h1 class="phero__h1">Dimension Calculator</h1>
+    <p class="phero__lede">Volume, volumetric weight and the chargeable weight your quote will actually be built on.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">The calculation</p>
+        <h2 class="h2 reveal">What you will actually be charged on</h2>
+        <p class="reveal" style="margin-top:1.2rem">Freight is charged on the greater of the real weight and the space the cargo occupies. This works out both, for sea and for air, using the same rules our quotes are built on.</p>
+      </div>
+
+      <form class="tool tool--calc reveal" id="calcForm" novalidate>
+        <h3 class="tool__ttl">Dimension Calculator</h3>
+        <div class="calc__row">
+          <div class="field"><label for="calcL">Length (cm)</label><input id="calcL" type="number" min="0" step="any" value="120"></div>
+          <div class="field"><label for="calcW">Width (cm)</label><input id="calcW" type="number" min="0" step="any" value="100"></div>
+          <div class="field"><label for="calcH">Height (cm)</label><input id="calcH" type="number" min="0" step="any" value="100"></div>
+        </div>
+        <div class="calc__row">
+          <div class="field"><label for="calcQty">Pieces</label><input id="calcQty" type="number" min="1" step="1" value="1"></div>
+          <div class="field"><label for="calcWt">Gross weight (kg)</label><input id="calcWt" type="number" min="0" step="any" value="250"></div>
+          <div class="field"><label for="calcMode">Mode</label>
+            <select id="calcMode"><option value="sea">Sea (1 CBM = 1000 kg)</option><option value="air">Air (IATA 1:6000)</option></select>
+          </div>
+        </div>
+        <output class="calc__out" id="calcOut" for="calcL calcW calcH calcQty calcWt calcMode"></output>
+        <p class="tool__hint">Dimensions are per piece and the total is multiplied by the number of pieces. Gross weight is the total for the consignment.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="eyebrow reveal">The rules behind it</p>
+      <h2 class="h2 reveal">Two divisors, one principle</h2>
+    </div>
+    <div class="grid grid--2">
+      <article class="card reveal">
+        <span class="card__no">Sea</span>
+        <h3>1 CBM = 1,000 kg</h3>
+        <p>LCL ocean freight is charged on the revenue tonne: whichever is greater, the volume in cubic metres or the weight in metric tonnes.</p>
+        <p><b>Volume</b> = L &times; W &times; H (cm) &divide; 1,000,000 &times; pieces<br>
+           <b>Volumetric weight</b> = CBM &times; 1,000 kg</p>
+        <p>Dense cargo is charged on weight; light, bulky cargo on volume.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card__no">Air</span>
+        <h3>IATA divisor 6,000</h3>
+        <p>Air freight uses the IATA volumetric divisor of 6,000 cm&sup3; per kilogram.</p>
+        <p><b>Volumetric weight</b> = L &times; W &times; H (cm) &divide; 6,000 &times; pieces</p>
+        <p>A 120 &times; 100 &times; 100 cm piece is 200 kg volumetric no matter what it weighs on the scale.</p>
+      </article>
+    </div>
+    <p class="note reveal" style="margin-top:1.8rem"><strong>This is an estimate, not a quotation.</strong> Carriers round up, some lanes apply a different divisor by contract, and surcharges are outside this calculation. Use it to size the shipment and to sanity-check a rate &mdash; then <a href="contact.html#quote">ask for the real number</a>.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">Getting the number down</p>
+        <h2 class="h2 reveal">Four things that change the answer</h2>
+      </div>
+      <div class="reveal">
+        <ol class="steps">
+          <li>
+            <div>
+              <h3>Measure the outside, not the goods</h3>
+              <p>Carriers measure the outermost point of the packed piece, pallet feet and shrink wrap included. A pallet overhang of two centimetres on each side is chargeable volume.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Check whether stacking is allowed</h3>
+              <p>A pallet marked do-not-stack is charged on the full height to the roof of the container or ULD, not on its own height. If your cargo can take a top load, say so.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Compare against a full container</h3>
+              <p>Once your CBM approaches half a box, run the FCL numbers. Our <a href="containers.html">container table</a> has the usable cube for every standard type.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Split by density, not by order</h3>
+              <p>On a mixed consignment, the heavy items decide the sea charge and the bulky items decide the air charge. Splitting them across modes sometimes beats sending everything one way.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__inner">
+      <div>
+        <h2>Got your chargeable weight?</h2>
+        <p>Send it with the lane and the commodity, and we will quote against it.</p>
+      </div>
+      <div class="cta__btns">
+        <a class="btn btn--solid btn--lg" href="contact.html#quote">Get Quote</a>
+        <a class="btn btn--line btn--lg" href="containers.html">Set of Containers</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================== FOOTER =========================== -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__top">
+      <div class="ftr__brand">
+        <a class="brand brand--ftr" href="index.html">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+          <path d="M20 2v36" stroke="currentColor" stroke-width="1.4"/>
+          <ellipse cx="20" cy="20" rx="8.4" ry="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+          <path d="M2.6 13.4h34.8M2.6 26.6h34.8" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+        </svg>
+          </span>
+          <span class="brand__txt"><strong>GML<em>INDIA</em></strong><small>Greenwich Meridian Logistics</small></span>
+        </a>
+        <p class="ftr__desc">Greenwich Meridian Logistics (India) Pvt. Ltd is one of the leading global logistics companies headquartered in Mumbai, India. Founded in 2002.</p>
+        <a class="btn btn--line" href="company-profile.html">Download GML Profile</a>
+      </div>
+
+      <nav class="ftr__nav" aria-label="Footer">
+        <div class="ftr__col">
+          <h3>About Us</h3>
+          <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="directors-note.html">Director's Note</a></li>
+              <li><a href="incorporation.html">GML Incorporation</a></li>
+              <li><a href="associates.html">Associates</a></li>
+          </ul>
+        </div>
+        <div class="ftr__col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="ocean-cargo.html">Ocean Cargo</a></li>
+            <li><a href="air-cargo.html">Air Cargo</a></li>
+            <li><a href="iso-tank.html">ISO Tank</a></li>
+            <li><a href="project-cargo.html">Project Cargo</a></li>
+            <li><a href="hazardous-cargo.html">Hazardous Cargo</a></li>
+          </ul>
+        </div>
+        <div class="ftr__col">
+          <h3>Instruments</h3>
+          <ul>
+              <li><a href="dimension-calculator.html">Dimension Calculator</a></li>
+              <li><a href="world-time.html">World Time</a></li>
+              <li><a href="world-ports.html">World Ports</a></li>
+              <li><a href="currency-converter.html">Currency converter</a></li>
+              <li><a href="containers.html">Set of Containers</a></li>
+          </ul>
+        </div>
+        <div class="ftr__col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="sailing-schedule.html">Sailing Schedule</a></li>
+            <li><a href="careers.html">Career</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="locations.html">Our Locations</a></li>
+            <li><a href="warehousing.html">Warehousing</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="ftr__mid">
+      <div>
+        <h3>Head Office</h3>
+        <address>504, Shrishti Plaza, Behind Amar Tara Plastics, Saki &ndash; Vihar Road,<br>Powai, Andheri (E), Mumbai 400 072, India.</address>
+      </div>
+      <div>
+        <h3>Quick Contact</h3>
+        <p><a href="tel:+912261489999">+91 22 6148 9999</a> &middot; <a href="tel:+912261489910">+91 22 6148 9910</a><br><a href="mailto:info@gmlindia.net">info@gmlindia.net</a></p>
+      </div>
+    </div>
+
+    <div class="ftr__btm">
+      <p>&copy; <span id="yr">2026</span> Greenwich Meridian Logistics (India) Pvt. Ltd. All rights reserved.</p>
+      <ul>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/pages.js" defer></script>
+</body>
+</html>

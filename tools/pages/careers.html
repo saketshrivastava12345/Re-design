@@ -1,0 +1,141 @@
+<section class="band">
+  <div class="wrap">
+    <dl class="facts reveal">
+      <div><dt>Team members</dt><dd>450<small>+</small></dd></div>
+      <div><dt>Offices</dt><dd>21</dd></div>
+      <div><dt>In business since</dt><dd>2002</dd></div>
+      <div><dt>Cities in India</dt><dd>26</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--rule">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">Working here</p>
+        <h2 class="h2 reveal">People, first and last</h2>
+      </div>
+      <div class="prose reveal">
+        <p class="lede">We never lose sight of the fact that our existence and services are about people, both domestically and overseas.</p>
+        <p>Freight is a business of judgement under time pressure. A rate is easy to copy; knowing which carrier will actually accept a class 3 consolidation on a Thursday sailing is not. That knowledge lives in people, and it is built by giving them real files early.</p>
+        <p>GML India is led by managers and owners who have been in the logistic industry for decades, and most of our senior operations staff came up through the desks. If you want to learn this trade properly, the fastest way is to sit next to someone doing it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="eyebrow reveal">Where we hire</p>
+      <h2 class="h2 reveal">The functions that make up the business</h2>
+      <p class="reveal">We recruit across all of these, at every level from trainee to branch manager. Openings vary by office and by season, so we would rather read your application than publish a list that goes stale.</p>
+    </div>
+    <div class="grid grid--3">
+      <article class="card reveal"><span class="card__no">01</span><h3>Ocean operations</h3><p>LCL and FCL bookings, consolidation planning, CFS coordination, carrier relationships.</p></article>
+      <article class="card reveal"><span class="card__no">02</span><h3>Air operations</h3><p>Allocation, air waybill issuance, dangerous goods acceptance, airport coordination.</p></article>
+      <article class="card reveal"><span class="card__no">03</span><h3>Documentation</h3><p>Bills of lading, shipping bills, certificates of origin, letters of credit.</p></article>
+      <article class="card reveal"><span class="card__no">04</span><h3>Customs brokerage</h3><p>Classification, valuation, filing, examination handling and AEO compliance.</p></article>
+      <article class="card reveal"><span class="card__no">05</span><h3>Sales &amp; pricing</h3><p>Lane pricing, tenders, key accounts and business development across the branch network.</p></article>
+      <article class="card reveal"><span class="card__no">06</span><h3>Tank &amp; hazardous</h3><p>ISO tank cycle management, empty yard planning, dangerous goods classification.</p></article>
+      <article class="card reveal"><span class="card__no">07</span><h3>Project cargo</h3><p>Route surveys, method statements, permits, heavy lift coordination.</p></article>
+      <article class="card reveal"><span class="card__no">08</span><h3>Finance &amp; IT</h3><p>Billing, receivables, compliance reporting, and the systems the whole operation runs on.</p></article>
+      <article class="card reveal"><span class="card__no">09</span><h3>Trainees</h3><p>Graduates who want the trade end to end rather than one screen of it.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__side">
+        <p class="eyebrow reveal">Apply</p>
+        <h2 class="h2 reveal">Send us your application</h2>
+        <p class="reveal" style="margin-top:1.2rem">Tell us the function and the city. Applications go to the head office HR desk and are circulated to the branch that is hiring.</p>
+        <p class="note reveal" style="margin-top:1.4rem"><strong>Attach your CV before sending.</strong> This form opens your email client with the details filled in &mdash; the file itself has to be attached in that window.</p>
+      </div>
+
+      <form class="tool reveal" id="jobForm" novalidate
+            data-mailto="info@gmlindia.net" data-subject="Career application — GML India">
+        <h3 class="tool__ttl">Application</h3>
+
+        <div class="qform__row">
+          <div class="field"><label for="jName">Full name</label>
+            <input id="jName" name="Name" data-label="Name" type="text" required autocomplete="name"></div>
+          <div class="field"><label for="jPhone">Mobile</label>
+            <input id="jPhone" name="Mobile" data-label="Mobile" type="tel" required autocomplete="tel"></div>
+        </div>
+        <div class="qform__row">
+          <div class="field"><label for="jEmail">Email</label>
+            <input id="jEmail" name="Email" data-label="Email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="jExp">Years of experience</label>
+            <input id="jExp" name="Experience" data-label="Experience" type="number" min="0" step="1" placeholder="0 for fresher"></div>
+        </div>
+        <div class="qform__row">
+          <div class="field"><label for="jFunc">Function</label>
+            <select id="jFunc" name="Function" data-label="Function">
+              <option>Ocean operations</option><option>Air operations</option><option>Documentation</option>
+              <option>Customs brokerage</option><option>Sales &amp; pricing</option><option>Tank &amp; hazardous</option>
+              <option>Project cargo</option><option>Finance &amp; IT</option><option>Trainee / graduate</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field"><label for="jCity">Preferred city</label>
+            <input id="jCity" name="Preferred city" data-label="Preferred city" type="text" required placeholder="e.g. Mumbai"></div>
+        </div>
+        <div class="field"><label for="jNote">Anything we should know</label>
+          <textarea id="jNote" name="Note" data-label="Note" rows="4" placeholder="Current role, notice period, and why this work interests you"></textarea></div>
+        <div class="field field--file"><label for="jCv">Attach CV</label>
+          <input id="jCv" name="CV" type="file">
+          <p class="field__note">The file name is listed in the draft; attach the file itself before sending.</p></div>
+
+        <p class="tool__err" data-form-err role="alert" hidden></p>
+        <button class="btn btn--solid btn--full" type="submit">Send application</button>
+        <p class="tool__hint">Opens your email client addressed to info@gmlindia.net.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="eyebrow reveal">Common questions</p>
+      <h2 class="h2 reveal">Before you apply</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>You do not list current openings. Why?</summary>
+        <p>Because hiring in a 26-office network is continuous and local, and a list published on a website is out of date within weeks. Applications are read and held against the roles that open in the city you name. If you would rather ask first, write to <a href="mailto:info@gmlindia.net">info@gmlindia.net</a> with the function and the city.</p>
+      </details>
+      <details>
+        <summary>Do you take freshers?</summary>
+        <p>Yes. Trainee intakes run in operations, documentation and customs. No prior freight experience is expected &mdash; an eye for detail and a tolerance for deadlines gets you further than a logistics certificate.</p>
+      </details>
+      <details>
+        <summary>Which cities?</summary>
+        <p>Any of the 26 on our <a href="locations.html">locations page</a>. Head office roles are in Powai, Mumbai; the branch network covers the gateway ports and the inland manufacturing clusters.</p>
+      </details>
+      <details>
+        <summary>What happens after I apply?</summary>
+        <p>Your application reaches the head office desk and is circulated to the branches hiring for that function. If there is a fit, someone from that office will contact you directly.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__inner">
+      <div>
+        <h2>Questions before you apply?</h2>
+        <p>Call the head office and ask for the HR desk.</p>
+      </div>
+      <div class="cta__btns">
+        <a class="btn btn--solid btn--lg" href="tel:+912261489999">+91 22 6148 9999</a>
+        <a class="btn btn--line btn--lg" href="about.html">About GML</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -9,9 +9,10 @@
   'use strict';
 
   var GML_CONFIG = window.GML_CONFIG = window.GML_CONFIG || {
-    // Where "Start Tracking" sends the reference. Until GML's tracking API is
-    // wired up this hands off to the official site rather than faking a result.
-    trackUrl: 'https://www.gmlindia.net/',
+    // Where "Start Tracking" sends the reference. tracking.html carries it
+    // through to the operations desk; point this at the tracking API once one
+    // exists and the same form will drive it.
+    trackUrl: 'tracking.html',
     // POST endpoint for the quote form. When null the form composes a mail
     // draft to the real address instead of pretending to have submitted.
     quoteEndpoint: null,
@@ -256,12 +257,15 @@
         refInput.focus();
         return;
       }
-      // Hand off to the official tracking service. The reference is carried in
-      // the URL so the destination can pick it up once the endpoint is wired.
+      // The reference is carried in the URL so the destination can pick it up
+      // whether that is our own tracking page or, later, a tracking API.
       var url = GML_CONFIG.trackUrl +
         (GML_CONFIG.trackUrl.indexOf('?') > -1 ? '&' : '?') +
         'ref=' + encodeURIComponent(v) + '&type=' + encodeURIComponent(refType);
-      window.open(url, '_blank', 'noopener');
+      // An external endpoint opens in its own tab; our own page navigates in
+      // place, because sending a visitor off-site is exactly what this is not.
+      if (/^https?:/i.test(GML_CONFIG.trackUrl)) window.open(url, '_blank', 'noopener');
+      else window.location.href = url;
     });
   }
 
