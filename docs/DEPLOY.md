@@ -70,3 +70,27 @@ needs an HTTP origin.
 - Re-verify the register figures against the live site (`docs/CONTENT-MAP.md`).
 - Set the integration points in `assets/js/main.js` and `assets/js/auth.js` if a
   tracking API, quote endpoint or authentication service is available.
+
+## Higgsfield (already deployed, currently sign-in gated)
+
+A copy is live on Higgsfield's hosting at
+**<https://gml-india-logistics.higgsfield.app>** — but the platform gates a site
+that has not been listed on its community feed, so the URL answers
+`401 unauthenticated` to anyone not signed in as the owner. It is reviewable by
+the account that deployed it and **cannot be shared with a client as it stands**.
+
+Opening it to the public means listing GML's site on Higgsfield's public
+AI-creative community feed, which is a brand decision and was deliberately not
+taken. GitHub Pages above is the better route for a client-facing link.
+
+That deployment differs from this repository in exactly one way: to keep the
+bundle small it does **not** carry the 480 journey frames, and sets
+
+```html
+<script>window.GML_FRAME_BASE = "https://cdn.jsdelivr.net/gh/<owner>/<repo>@<sha>/assets/frames/";</script>
+```
+
+so the frames stream from a CDN, pinned to an immutable commit. That hook is a
+supported option (see `assets/js/journey.js`) and is **off by default** — a
+checkout of this repository is entirely self-contained and serves its own
+frames. Note that the CDN path depends on this GitHub repository staying public.
