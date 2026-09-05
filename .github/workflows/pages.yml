@@ -1,0 +1,64 @@
+# Publish the static site to GitHub Pages.
+#
+# The site has no build step — it is HTML, CSS, JS and images — so this only
+# assembles a clean directory (everything except the repo plumbing and the
+# design-review contact sheets) and hands it to Pages.
+#
+# `configure-pages` runs with `enablement: true`, so it turns Pages on for the
+# repository if it is not already enabled; nobody has to change a setting by
+# hand for the first deploy.
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - claude/gml-india-scroll-story-2m6ct3
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; never cancel one that is already publishing.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Assemble the site
+        run: |
+          mkdir -p _site
+          rsync -a ./ _site/ \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '_site' \
+            --exclude 'tools' \
+            --exclude 'docs/frame-map-*.jpg'
+          echo "--- published tree ---"
+          du -sh _site
+          ls _site
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
