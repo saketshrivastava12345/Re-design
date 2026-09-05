@@ -6,14 +6,25 @@ code, no third-party runtime request. Any static host serves it as-is.
 Every internal path is relative, so the site works from a subdirectory
 (`example.com/Re-design/`) just as well as from a domain root.
 
-## GitHub Pages — fastest, no account needed beyond this repo
+## GitHub Pages
+
+A workflow is already committed at `.github/workflows/pages.yml`. It assembles
+the site and deploys it, and it runs on every push to
+`claude/gml-india-scroll-story-2m6ct3`.
+
+**One setting has to be changed by hand first.** The workflow's `GITHUB_TOKEN`
+is not allowed to turn Pages on for a repository — GitHub answers
+`Create Pages site failed: Resource not accessible by integration` — so the
+first deploy needs a repository admin:
 
 1. Open **Settings → Pages** on `saketshrivastava12345/Re-design`.
-2. Under *Build and deployment*, set **Source: Deploy from a branch**.
-3. Choose branch **`claude/gml-india-scroll-story-2m6ct3`** and folder **`/ (root)`**.
-4. Save. The first build takes a minute or two.
+2. Under *Build and deployment*, set **Source: GitHub Actions**.
+3. Go to **Actions → Deploy to GitHub Pages → Run workflow**, and pick the
+   branch `claude/gml-india-scroll-story-2m6ct3`.
 
-The site then lives at:
+From then on every push to that branch republishes automatically.
+
+The site will be at:
 
 ```
 https://saketshrivastava12345.github.io/Re-design/
@@ -21,11 +32,19 @@ https://saketshrivastava12345.github.io/Re-design/login.html
 https://saketshrivastava12345.github.io/Re-design/register.html
 ```
 
-`.nojekyll` is committed at the repo root so Pages serves the files verbatim
-rather than running them through Jekyll.
+The repository is public, so Pages is free here — no plan needed. The published
+tree is 32 MB, comfortably inside the 1 GB Pages limit.
 
-The repository is public, so Pages is free here — no plan needed. The ~30 MB of
-frames sits comfortably inside the 1 GB Pages limit.
+<details>
+<summary>If you would rather not use the workflow</summary>
+
+Set **Source: Deploy from a branch**, branch
+`claude/gml-india-scroll-story-2m6ct3`, folder `/ (root)`. `.nojekyll` is
+committed at the repo root so Pages serves the files verbatim instead of running
+them through Jekyll. Delete `.github/workflows/pages.yml` if you take this
+route, so the two do not both try to publish.
+
+</details>
 
 ## Netlify / Vercel / Cloudflare Pages
 
