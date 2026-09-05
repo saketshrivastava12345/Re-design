@@ -24,9 +24,8 @@ https://saketshrivastava12345.github.io/Re-design/register.html
 `.nojekyll` is committed at the repo root so Pages serves the files verbatim
 rather than running them through Jekyll.
 
-Note that the repository is currently private — Pages on a private repo needs a
-GitHub Pro/Team plan, or make the repo public first. The repo holds ~30 MB of
-frames, comfortably inside the 1 GB Pages limit.
+The repository is public, so Pages is free here — no plan needed. The ~30 MB of
+frames sits comfortably inside the 1 GB Pages limit.
 
 ## Netlify / Vercel / Cloudflare Pages
 
