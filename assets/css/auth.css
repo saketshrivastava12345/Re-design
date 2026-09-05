@@ -1,0 +1,147 @@
+/* ===========================================================================
+   GML — client authentication interface
+   ---------------------------------------------------------------------------
+   Same black / charcoal / champagne-gold system as the homepage, so the page
+   reads as part of the site rather than a bolted-on form.
+
+   This is an INTERFACE LAYER ONLY. There is no authentication backend and
+   nothing here reports a successful sign-in; assets/js/auth.js carries a
+   single `endpoint` slot for a real API to be wired into.
+   =========================================================================== */
+
+.auth-body{ min-height:100vh; min-height:100svh; display:flex; flex-direction:column; overflow-x:clip; }
+
+/* --- slim header, just enough to get back to the site --- */
+.auth-hdr{
+  position:relative; z-index:5; display:flex; align-items:center; justify-content:space-between;
+  gap:1.5rem; padding:1.15rem var(--gut); border-bottom:1px solid var(--line);
+}
+.auth-hdr .brand__img{ height:34px; }
+
+/* --- the split --- */
+.auth{ flex:1; display:grid; grid-template-columns:1.05fr .95fr; min-height:0; }
+
+/* left: the brand side, lit from the supplied footage */
+.auth__aside{ position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; padding:clamp(2.2rem,4.5vw,4.5rem); }
+.auth__bg{ position:absolute; inset:0; background:url('../img/auth.jpg') center/cover no-repeat; transform:scale(1.04); filter:saturate(.9); }
+.auth__bg::after{
+  content:''; position:absolute; inset:0;
+  background:
+    linear-gradient(118deg,rgba(5,5,5,.93) 0%,rgba(5,5,5,.42) 46%,rgba(5,5,5,.9) 100%),
+    linear-gradient(180deg,rgba(5,5,5,.28) 0%,rgba(5,5,5,0) 34%,rgba(5,5,5,.42) 100%);
+}
+/* a slow gold light drifting across the panel — one element, no particles */
+.auth__light{
+  position:absolute; left:-30%; top:-40%; width:90%; height:180%;
+  background:radial-gradient(closest-side,rgba(198,167,106,.16),rgba(198,167,106,0) 70%);
+  animation:authDrift 22s var(--e-io) infinite alternate;
+  pointer-events:none;
+}
+@keyframes authDrift{ from{ transform:translate3d(0,0,0); } to{ transform:translate3d(58%,12%,0); } }
+.auth__grain{
+  position:absolute; inset:-50%; opacity:.05; pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='.55'/></svg>");
+}
+/* the content sits above the decorative layers; the layers keep their own
+   absolute positioning (a bare `.auth__aside > *` would win on source order
+   and collapse them to zero height) */
+.auth__aside > :not(.auth__bg):not(.auth__light):not(.auth__grain){ position:relative; z-index:1; }
+.auth__aside > .auth__bg,
+.auth__aside > .auth__light,
+.auth__aside > .auth__grain{ z-index:0; }
+.auth__stmt{ font-size:clamp(1.7rem,3vw,2.9rem); letter-spacing:-.032em; line-height:1.06; max-width:16ch; }
+.auth__sub{ margin-top:1.5rem; max-width:44ch; font-size:1rem; color:var(--text); }
+.auth__facts{ display:flex; flex-wrap:wrap; gap:.9rem 2.4rem; font-family:var(--font-m); font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-dim); }
+.auth__facts span{ display:flex; align-items:center; gap:.55rem; }
+.auth__facts span::before{ content:''; width:4px; height:4px; background:var(--gold); flex:none; }
+
+/* right: the form */
+.auth__main{ display:flex; align-items:center; justify-content:center; padding:clamp(2.2rem,5vw,4.5rem) var(--gut); background:var(--ink); }
+.auth__card{ width:100%; max-width:460px; }
+
+.auth__tabs{ position:relative; display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--line); margin-bottom:2.6rem; }
+.auth__tabs button{
+  padding:.95rem .5rem 1.05rem; font-family:var(--font-m); font-size:.72rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--text-dim); transition:color .45s var(--e-out);
+}
+.auth__tabs button:hover{ color:var(--white); }
+.auth__tabs button[aria-selected="true"]{ color:var(--white); }
+/* the gold underline slides between the two tabs */
+.auth__ink{
+  position:absolute; bottom:-1px; left:0; width:50%; height:1px; background:var(--gold);
+  transform:translateX(var(--ink-x,0));
+  transition:transform .55s var(--e-out);
+}
+
+.auth__panel{ display:flex; flex-direction:column; gap:1.15rem; }
+.auth__panel[hidden]{ display:none; }
+/* panel morph: the outgoing form is replaced, the incoming one sweeps in */
+.auth__panel.is-enter{ animation:authIn .55s var(--e-out) both; }
+@keyframes authIn{
+  from{ opacity:0; transform:translate3d(var(--from,18px),0,0); }
+  to  { opacity:1; transform:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  .auth__panel.is-enter{ animation:none; }
+  .auth__light{ animation:none; }
+  .auth__ink{ transition:none; }
+}
+
+.auth__intro{ margin-bottom:.6rem; }
+.auth__intro h1{ font-size:clamp(1.5rem,2.6vw,2.1rem); letter-spacing:-.03em; }
+.auth__intro p{ margin-top:.75rem; font-size:.94rem; }
+
+.auth__row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.auth__pw{ position:relative; }
+.auth__pw input{ padding-right:4.6rem; }
+.auth__peek{
+  position:absolute; right:.55rem; bottom:.42rem; padding:.42rem .6rem;
+  font-family:var(--font-m); font-size:.58rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-dim); border:1px solid var(--line); background:var(--ink-2);
+  transition:color .3s, border-color .3s;
+}
+.auth__peek:hover{ color:var(--gold-lt); border-color:var(--line-gold); }
+
+.auth__aux{ display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-top:.3rem; }
+.auth__check{ display:flex; align-items:center; gap:.6rem; cursor:pointer; font-size:.85rem; color:var(--text); }
+.auth__check input{ position:absolute; opacity:0; width:1px; height:1px; }
+.auth__check i{ width:15px; height:15px; border:1px solid var(--line-2); display:block; flex:none; position:relative; transition:border-color .3s, background-color .3s; }
+.auth__check i::after{
+  content:''; position:absolute; left:4px; top:1px; width:4px; height:8px;
+  border:solid #0A0A0A; border-width:0 1.5px 1.5px 0; transform:rotate(42deg) scale(0);
+  transition:transform .25s var(--e-out);
+}
+.auth__check input:checked + i{ background:var(--gold); border-color:var(--gold); }
+.auth__check input:checked + i::after{ transform:rotate(42deg) scale(1); }
+.auth__check input:focus-visible + i{ outline:2px solid var(--gold); outline-offset:3px; }
+.auth__link{ font-family:var(--font-m); font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-dim); border-bottom:1px solid transparent; transition:color .3s, border-color .3s; }
+.auth__link:hover{ color:var(--gold-lt); border-bottom-color:var(--gold); }
+
+.field__err{ font-size:.78rem; color:#E4885F; }
+.field__err[hidden]{ display:none; }
+
+/* the honest state: no backend is connected, so nothing claims to sign in */
+.auth__notice{
+  margin-top:1.4rem; padding:1.1rem 1.2rem; border:1px solid var(--line-gold);
+  background:rgba(198,167,106,.06); font-size:.86rem; line-height:1.6; color:var(--white);
+}
+.auth__notice[hidden]{ display:none; }
+.auth__notice b{ color:var(--gold-lt); font-weight:500; }
+.auth__notice code{ font-family:var(--font-m); font-size:.78rem; color:var(--gold); }
+
+.auth__foot{ margin-top:2.4rem; padding-top:1.6rem; border-top:1px solid var(--line); font-size:.84rem; color:var(--text-dim); }
+.auth__foot a{ color:var(--white); border-bottom:1px solid var(--line-2); transition:color .3s, border-color .3s; }
+.auth__foot a:hover{ color:var(--gold-lt); border-color:var(--gold); }
+
+@media (max-width:960px){
+  .auth{ grid-template-columns:1fr; }
+  .auth__aside{ min-height:44vh; }
+  .auth__stmt{ max-width:none; }
+}
+@media (max-width:560px){
+  .auth__row{ grid-template-columns:1fr; }
+  .auth__aside{ min-height:34vh; padding-block:2.4rem; }
+}
+
+/* the stack of fields inside a form (distinct from the tab panel itself) */
+.auth__fields{ display:flex; flex-direction:column; gap:1.15rem; }

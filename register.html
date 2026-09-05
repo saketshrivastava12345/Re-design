@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Create an account — Greenwich Meridian Logistics (India) Pvt. Ltd.</title>
+<meta name="description" content="Register for the Greenwich Meridian Logistics (India) client area.">
+<meta name="theme-color" content="#050505">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.gmlindia.net/register">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body class="auth-body" data-auth-default="register">
+
+<a class="skip-link" href="#panel-register">Skip to the form</a>
+
+<header class="auth-hdr">
+  <a class="brand" href="index.html" aria-label="Greenwich Meridian Logistics India — home">
+    <img class="brand__img" src="assets/brand/gml-logo.svg" alt="Greenwich Meridian Logistics (India) Pvt. Ltd." width="186" height="40" data-brand-logo>
+    <span class="brand__mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="30" height="30" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.3" opacity=".4"/>
+        <path d="M20 2v36" stroke="currentColor" stroke-width="1.3"/>
+        <ellipse cx="20" cy="20" rx="8.4" ry="18" stroke="currentColor" stroke-width="1.3" opacity=".4"/>
+        <path d="M2.6 13.4h34.8M2.6 26.6h34.8" stroke="currentColor" stroke-width="1.3" opacity=".4"/>
+      </svg>
+    </span>
+    <span class="brand__txt"><strong>GML<em>INDIA</em></strong><small>Greenwich Meridian Logistics</small></span>
+  </a>
+  <a class="link-arrow" href="index.html">Back to site</a>
+</header>
+
+<main class="auth">
+
+  <!-- brand side, lit from the supplied GML journey footage -->
+  <aside class="auth__aside">
+    <div class="auth__bg" aria-hidden="true"></div>
+    <div class="auth__light" aria-hidden="true"></div>
+    <div class="auth__grain" aria-hidden="true"></div>
+
+    <p class="eyebrow">Client Area</p>
+
+    <div>
+      <p class="auth__stmt">One streamlined <em class="ser">point of contact</em>.</p>
+      <p class="auth__sub">Greenwich Meridian Logistics (India) Pvt. Ltd — one of the leading global logistics companies headquartered in Mumbai, India. Founded in 2002.</p>
+    </div>
+
+    <p class="auth__facts">
+      <span>Ocean</span><span>Air</span><span>ISO Tank</span><span>Project</span><span>Hazardous</span>
+    </p>
+  </aside>
+
+  <!-- the form -->
+  <div class="auth__main">
+    <div class="auth__card">
+
+      <div class="auth__tabs" role="tablist" aria-label="Client area">
+        <button type="button" role="tab" id="tab-login"    aria-controls="panel-login"    aria-selected="false" data-view="login">Login</button>
+        <button type="button" role="tab" id="tab-register" aria-controls="panel-register" aria-selected="true"  data-view="register">Register</button>
+        <span class="auth__ink" aria-hidden="true"></span>
+      </div>
+
+      <!-- ---------------------------------------------------- LOGIN ---- -->
+      <section class="auth__panel" id="panel-login" role="tabpanel" aria-labelledby="tab-login" tabindex="-1" hidden>
+        <div class="auth__intro">
+          <h1>Sign in</h1>
+          <p>Access your shipment references, documents and quotes.</p>
+        </div>
+
+        <form novalidate autocomplete="on">
+          <div class="auth__fields">
+            <div class="field">
+              <label for="loginEmail">Email</label>
+              <input id="loginEmail" name="email" type="email" data-rule="email" required autocomplete="email" autocapitalize="off" spellcheck="false">
+              <p class="field__err" role="alert" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="loginPassword">Password</label>
+              <div class="auth__pw">
+                <input id="loginPassword" name="password" type="password" data-rule="password" required autocomplete="current-password">
+                <button class="auth__peek" type="button" data-for="loginPassword" aria-pressed="false" aria-label="Show password">Show</button>
+              </div>
+              <p class="field__err" role="alert" hidden></p>
+            </div>
+
+            <div class="auth__aux">
+              <label class="auth__check">
+                <input type="checkbox" name="remember" value="yes"><i aria-hidden="true"></i>
+                <span>Remember me</span>
+              </label>
+              <a class="auth__link" id="authForgot" href="#panel-login">Forgot password?</a>
+            </div>
+
+            <button class="btn btn--gold btn--full btn--lg" type="submit" style="margin-top:.6rem">Sign in</button>
+          </div>
+
+          <p class="auth__notice" id="noticeLogin" role="status" tabindex="-1" hidden></p>
+        </form>
+
+        <p class="auth__foot">No account yet? <a href="register.html#register" data-view-link="register">Create one</a>.</p>
+      </section>
+
+      <!-- ------------------------------------------------- REGISTER ---- -->
+      <section class="auth__panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register" tabindex="-1">
+        <div class="auth__intro">
+          <h1>Create an account</h1>
+          <p>Tell us who you are and our team will set your access up.</p>
+        </div>
+
+        <form novalidate autocomplete="on">
+          <div class="auth__fields">
+            <div class="auth__row">
+              <div class="field">
+                <label for="regName">Full Name</label>
+                <input id="regName" name="fullName" type="text" required autocomplete="name">
+                <p class="field__err" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label for="regCompany">Company Name</label>
+                <input id="regCompany" name="company" type="text" required autocomplete="organization">
+                <p class="field__err" role="alert" hidden></p>
+              </div>
+            </div>
+
+            <div class="auth__row">
+              <div class="field">
+                <label for="regEmail">Email</label>
+                <input id="regEmail" name="email" type="email" data-rule="email" required autocomplete="email" autocapitalize="off" spellcheck="false">
+                <p class="field__err" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label for="regPhone">Phone</label>
+                <input id="regPhone" name="phone" type="tel" data-rule="tel" required autocomplete="tel">
+                <p class="field__err" role="alert" hidden></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="regPassword">Password</label>
+              <div class="auth__pw">
+                <input id="regPassword" name="password" type="password" data-rule="password" required autocomplete="new-password">
+                <button class="auth__peek" type="button" data-for="regPassword" aria-pressed="false" aria-label="Show password">Show</button>
+              </div>
+              <p class="field__err" role="alert" hidden></p>
+              <p class="field__note">At least 8 characters.</p>
+            </div>
+
+            <div class="field">
+              <label for="regConfirm">Confirm Password</label>
+              <div class="auth__pw">
+                <input id="regConfirm" name="confirmPassword" type="password" data-rule="confirm" data-match="regPassword" required autocomplete="new-password">
+                <button class="auth__peek" type="button" data-for="regConfirm" aria-pressed="false" aria-label="Show password">Show</button>
+              </div>
+              <p class="field__err" role="alert" hidden></p>
+            </div>
+
+            <button class="btn btn--gold btn--full btn--lg" type="submit" style="margin-top:.6rem">Create Account</button>
+          </div>
+
+          <p class="auth__notice" id="noticeRegister" role="status" tabindex="-1" hidden></p>
+        </form>
+
+        <p class="auth__foot">Already registered? <a href="login.html#login" data-view-link="login">Sign in</a>.</p>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="auth-hdr" style="border-bottom:0;border-top:1px solid var(--line);font-family:var(--font-m);font-size:.62rem;letter-spacing:.1em;color:var(--text-fade)">
+  <p>&copy; <span id="yr">2026</span> Greenwich Meridian Logistics (India) Pvt. Ltd.</p>
+  <p><a href="mailto:info@gmlindia.net">info@gmlindia.net</a> &middot; <a href="tel:+912261489999">+91 22 6148 9999</a></p>
+</footer>
+
+<script src="assets/js/auth.js" defer></script>
+</body>
+</html>

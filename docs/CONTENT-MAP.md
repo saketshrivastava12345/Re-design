@@ -1,5 +1,14 @@
 # GML INDIA — CONTENT MAP
 Source of truth: https://www.gmlindia.net/ (crawled during audit)
+
+> **Re-verification note (redesign pass).** The build environment for the
+> redesign had no outbound network route to `gmlindia.net` — the egress proxy
+> refused the connection — so the live site could NOT be re-crawled during that
+> pass. Everything below is the earlier verbatim crawl and is what the redesign
+> was built from. Re-check it against the live site before the site goes to a
+> client, in particular the DGS registration number, the FMC bond number and the
+> office counts. See ASSETS.md.
+
 Every figure is tagged with the ORIGINAL PAGE it came from. Figures differ between pages —
 preserve each in its own context. DO NOT reconcile them into one number.
 

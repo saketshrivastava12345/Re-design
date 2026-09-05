@@ -5,23 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Greenwich Meridian Logistics (India) Pvt. Ltd. — Ocean, Air, ISO Tank, Project &amp; Hazardous Cargo</title>
 <meta name="description" content="Greenwich Meridian Logistics (India) Pvt. Ltd is one of the leading global logistics companies headquartered in Mumbai, India. Founded in 2002. Ocean Cargo, Air Cargo, ISO Tank, Project Cargo and Hazardous Cargo.">
-<meta name="theme-color" content="#0A1420">
+<meta name="theme-color" content="#050505">
 <link rel="canonical" href="https://www.gmlindia.net/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/favicon.svg">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Greenwich Meridian Logistics (India) Pvt. Ltd.">
 <meta property="og:title" content="Greenwich Meridian Logistics (India) Pvt. Ltd.">
 <meta property="og:description" content="One of the leading global logistics companies headquartered in Mumbai, India. Founded in 2002.">
 <meta property="og:image" content="assets/frames/poster.jpg">
 <meta property="og:url" content="https://www.gmlindia.net/">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="assets/css/fonts.css">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/space-grotesk-latin-500-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
-<link rel="preload" as="image" href="assets/frames/poster.jpg">
+<link rel="preload" as="image" href="assets/frames/poster.jpg" fetchpriority="high">
 
 <script type="application/ld+json">
 {
@@ -35,7 +37,7 @@
   "telephone": "+91-22-6148-9999",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "504, Shrishti Plaza, Behind Amar Tara Plastics, Saki - Vihar Road, Powai, Andheri (E)",
+    "streetAddress": "504, Shrishti Plaza, Behind Amar Tara Plastics, Saki – Vihar Road, Powai, Andheri (E)",
     "addressLocality": "Mumbai",
     "postalCode": "400 072",
     "addressCountry": "IN"
@@ -47,16 +49,22 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- ============================ HEADER ============================ -->
+<!-- whole-document progress hairline -->
+<div class="pbar" aria-hidden="true"><i></i></div>
+
+<!-- ============================== HEADER ============================== -->
 <header class="hdr" id="hdr">
   <div class="hdr__inner">
-    <a class="brand" href="/" aria-label="Greenwich Meridian Logistics India — home">
+    <a class="brand" href="./" aria-label="Greenwich Meridian Logistics India — home">
+      <!-- Drop the official logo in at assets/brand/gml-logo.svg and it replaces
+           the drawn mark automatically. See assets/brand/README.md. -->
+      <img class="brand__img" src="assets/brand/gml-logo.svg" alt="Greenwich Meridian Logistics (India) Pvt. Ltd." width="150" height="38" data-brand-logo>
       <span class="brand__mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
-          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
-          <path d="M20 2v36" stroke="currentColor" stroke-width="1.4"/>
-          <ellipse cx="20" cy="20" rx="8.4" ry="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
-          <path d="M2.6 13.4h34.8M2.6 26.6h34.8" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+        <svg viewBox="0 0 40 40" width="32" height="32" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.3" opacity=".4"/>
+          <path d="M20 2v36" stroke="currentColor" stroke-width="1.3"/>
+          <ellipse cx="20" cy="20" rx="8.4" ry="18" stroke="currentColor" stroke-width="1.3" opacity=".4"/>
+          <path d="M2.6 13.4h34.8M2.6 26.6h34.8" stroke="currentColor" stroke-width="1.3" opacity=".4"/>
         </svg>
       </span>
       <span class="brand__txt">
@@ -135,6 +143,8 @@
             <ul class="mega__list">
               <li><a href="https://www.gmlindia.net/Home/ContactUs">Contact Us</a></li>
               <li><a href="https://www.gmlindia.net/AboutUs/GMLIndia">Our Locations</a></li>
+              <li><a href="login.html">Client Login</a></li>
+              <li><a href="register.html">Register</a></li>
             </ul>
           </div>
         </li>
@@ -142,8 +152,9 @@
     </nav>
 
     <div class="hdr__cta">
-      <a class="btn btn--ghost" href="#track">Tracking</a>
-      <a class="btn btn--solid" href="#quote">Get Quote</a>
+      <a class="btn btn--ghost" href="login.html">Login</a>
+      <a class="btn btn--line" href="#track">Tracking</a>
+      <a class="btn btn--gold" href="#quote">Get Quote</a>
     </div>
 
     <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Open menu">
@@ -152,7 +163,7 @@
   </div>
 </header>
 
-<!-- ===================== MOBILE NAVIGATION ===================== -->
+<!-- ========================= MOBILE NAVIGATION ========================= -->
 <div class="mnav" id="mnav" hidden>
   <nav class="mnav__inner" aria-label="Mobile">
     <a class="mnav__top" href="https://www.gmlindia.net/">Home</a>
@@ -189,79 +200,105 @@
       <a href="https://www.gmlindia.net/AboutUs/GMLIndia">Our Locations</a>
     </details>
 
+    <details class="mnav__grp"><summary>Client Area</summary>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </details>
+
     <div class="mnav__cta">
-      <a class="btn btn--ghost" href="#track">Tracking</a>
-      <a class="btn btn--solid" href="#quote">Get Quote</a>
+      <a class="btn btn--line" href="#track">Tracking</a>
+      <a class="btn btn--gold" href="#quote">Get Quote</a>
+      <a class="btn btn--line btn--full" href="login.html">Client Login</a>
     </div>
     <a class="mnav__call" href="tel:+912261489999">Call For Support! +91 22 6148 9999</a>
   </nav>
 </div>
 
+<!-- ======================= GLOBAL CHAPTER RAIL ======================= -->
+<nav class="rail" id="rail" aria-label="Page chapters">
+  <div class="rail__track" aria-hidden="true"><i id="railFill"></i></div>
+  <ul class="rail__list">
+    <li><a href="#journey"        data-chapter>Journey</a></li>
+    <li><a href="#about"          data-chapter>About</a></li>
+    <li><a href="#services"       data-chapter>Services</a></li>
+    <li><a href="#why"            data-chapter>Why GML</a></li>
+    <li><a href="#locations"      data-chapter>Network</a></li>
+    <li><a href="#industries"     data-chapter>Solutions</a></li>
+    <li><a href="#track"          data-chapter>Tools</a></li>
+    <li><a href="#quote"          data-chapter>Contact</a></li>
+  </ul>
+</nav>
+
 <main id="main">
 
-<!-- ================== 1. CINEMATIC SCROLL JOURNEY ================== -->
-<section class="journey" id="journey" aria-label="GML global logistics journey">
+<!-- ================== CHAPTER 01 — THE CINEMATIC JOURNEY ==================
+     240 scroll-controlled frames on one canvas. The section is an ordinary
+     block in the document; the stage inside it is sticky. The page scroll is
+     never captured. -->
+<section class="journey" id="journey" aria-label="Chapter one: the GML global logistics journey">
   <div class="journey__stage">
     <canvas class="journey__canvas" id="journeyCanvas" role="img"
             aria-label="A container truck travels a coastal highway to a container terminal, a container ship is loaded at berth, the camera lifts out over the ocean and rises through cloud to a GML India cargo aircraft in flight."></canvas>
-    <div class="journey__grade" aria-hidden="true"></div>
     <noscript><img class="journey__fallback" src="assets/frames/poster.jpg" alt="A GML container truck on a coastal highway."></noscript>
+    <div class="journey__grade" aria-hidden="true"></div>
+    <div class="journey__grain" aria-hidden="true"></div>
+    <div class="journey__fade" aria-hidden="true"></div>
 
     <!-- scroll-timed overlay copy -->
-    <div class="jo" aria-hidden="false">
+    <div class="jo">
 
       <div class="jo__block jo__block--hero" data-in="0" data-out="0.15">
         <p class="eyebrow">Greenwich Meridian Logistics (India) Pvt. Ltd. &middot; Est. 2002</p>
-        <h1 class="jo__h1">You Choose GML,<br>You Choose The Most<br><em>Hassle-Free</em> Logistics Experience</h1>
+        <h1 class="jo__h1">You Choose GML,<br>You Choose The Most<br><em class="ser">Hassle-Free</em> Logistics Experience</h1>
         <p class="jo__lede">One of the leading global logistics companies headquartered in Mumbai, India.</p>
         <div class="jo__cta">
-          <a class="btn btn--solid btn--lg" href="#quote">Get Quote</a>
+          <a class="btn btn--gold btn--lg" href="#quote">Get Quote</a>
           <a class="btn btn--line btn--lg" href="#services">Our Services</a>
         </div>
       </div>
 
       <div class="jo__block jo__block--stage" data-in="0.19" data-out="0.27">
-        <span class="jo__no">01</span>
+        <span class="jo__no">CHAPTER 01 / 05</span>
         <h2 class="jo__stage">Surface</h2>
         <p>Road haulage and ex-works pick up. The shipment leaves the factory gate.</p>
       </div>
 
       <div class="jo__block jo__block--stage" data-in="0.34" data-out="0.44">
-        <span class="jo__no">02</span>
+        <span class="jo__no">CHAPTER 02 / 05</span>
         <h2 class="jo__stage">Terminal</h2>
         <p>Consolidation and deconsolidation at CFS. Documentation, customs, custody.</p>
       </div>
 
       <div class="jo__block jo__block--stage" data-in="0.49" data-out="0.61">
-        <span class="jo__no">03</span>
+        <span class="jo__no">CHAPTER 03 / 05</span>
         <h2 class="jo__stage">Ocean Cargo</h2>
         <p>LCL, FCL and NVOCC. 1650 destinations are serviced by LCL weekly.</p>
       </div>
 
       <div class="jo__block jo__block--stage" data-in="0.655" data-out="0.735">
-        <span class="jo__no">04</span>
+        <span class="jo__no">CHAPTER 04 / 05</span>
         <h2 class="jo__stage">Open Water</h2>
         <p>Multimodal expertise and a data-centric information advantage.</p>
       </div>
 
       <div class="jo__block jo__block--stage" data-in="0.79" data-out="0.87">
-        <span class="jo__no">05</span>
+        <span class="jo__no">CHAPTER 05 / 05</span>
         <h2 class="jo__stage">Air Cargo</h2>
         <p>Contracts with major carriers, and a dedicated air cargo team.</p>
       </div>
 
-      <div class="jo__block jo__block--end" data-in="0.90" data-out="1.01">
+      <div class="jo__block jo__block--end" data-in="0.905" data-out="1.01">
         <p class="eyebrow">Air &middot; Surface &middot; Sea</p>
-        <h2 class="jo__h2">We Simply Connect</h2>
+        <h2 class="jo__h2">We Simply <em class="ser">Connect</em></h2>
         <p class="jo__lede">Customized holistic logistics solutions, from one streamlined point of contact.</p>
         <div class="jo__cta">
-          <a class="btn btn--solid btn--lg" href="#quote">Get Quote</a>
+          <a class="btn btn--gold btn--lg" href="#quote">Get Quote</a>
           <a class="btn btn--line btn--lg" href="#track">Start Tracking</a>
         </div>
       </div>
     </div>
 
-    <!-- progress rail -->
+    <!-- which leg of the journey -->
     <div class="jrail" aria-hidden="true">
       <ol class="jrail__list">
         <li data-at="0.06"><span>Road</span></li>
@@ -275,183 +312,79 @@
 
     <div class="journey__hint" id="journeyHint" aria-hidden="true">
       <span>Scroll to travel</span>
-      <svg viewBox="0 0 16 26" width="16" height="26" fill="none"><rect x=".7" y=".7" width="14.6" height="24.6" rx="7.3" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="7.5" r="1.8" fill="currentColor"/></svg>
+      <svg viewBox="0 0 16 26" width="14" height="22" fill="none"><rect x=".7" y=".7" width="14.6" height="24.6" rx="7.3" stroke="currentColor" stroke-width="1.1"/><circle cx="8" cy="7.5" r="1.7" fill="currentColor"/></svg>
     </div>
 
     <div class="journey__load" id="journeyLoad" aria-hidden="true"><i></i></div>
   </div>
 </section>
 
-<!-- ==================== 2. BRAND INTRODUCTION ==================== -->
-<section class="intro" id="about">
+<!-- ========== THE THRESHOLD — the hand-off from film to company ==========
+     The aircraft frame is picked back up as a still, a dark wash rises over
+     it, and the company's own positioning surfaces out of that dark. -->
+<section class="thresh" id="threshold" data-sc="top top | bottom bottom" aria-label="Greenwich Meridian Logistics">
+  <div class="thresh__stage">
+    <div class="thresh__bg" aria-hidden="true"></div>
+    <div class="thresh__wash" aria-hidden="true"></div>
+    <div class="thresh__inner">
+      <div class="thresh__line" aria-hidden="true"></div>
+      <p class="thresh__stmt">Multimodal expertise and a<br><em class="ser">data-centric</em> information advantage.</p>
+      <p class="thresh__sub">Greenwich Meridian Logistics (India) Pvt. Ltd — led by an experienced team of managers and owners who have been in the logistic industry for decades.</p>
+      <p class="thresh__meta">
+        <span>Founded 2002</span>
+        <span>Headquartered in Mumbai</span>
+        <span>Air &middot; Surface &middot; Sea</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================== CHAPTER 02 — ABOUT THE COMPANY ================== -->
+<section class="sec about" id="about" data-sc="top bottom | top center">
   <div class="wrap">
-    <div class="intro__grid">
-      <div class="intro__lead">
+    <div class="about__grid">
+      <div class="about__lead">
         <p class="eyebrow reveal">About GML</p>
-        <h2 class="h2 reveal">We Have More Than<br>20 Years of Experience</h2>
+        <h2 class="about__stmt reveal">We Have More Than<br><em class="ser">20 Years</em><br>of Experience</h2>
       </div>
-      <div class="intro__body">
+      <div class="about__body">
         <p class="lede reveal">Greenwich Meridian Logistics (India) Pvt. Ltd is one of the leading global logistics companies headquartered in Mumbai, India. Founded in 2002, GML is led by an experienced team of managers and owners who have been in the logistic industry for decades.</p>
         <p class="reveal">Our comprehensive suite of logistic solutions encompasses multimodal expertise and data-centric information advantage. We are competent to cater to diversified business needs including hazardous cargo.</p>
         <p class="reveal">Driven by a long-term vision, GML India operates through 21 offices and employs more than 450+ members.</p>
         <a class="link-arrow reveal" href="https://www.gmlindia.net/AboutUs/Index">Read more about us</a>
+
+        <figure class="band plate reveal" data-sc="top bottom | bottom center" style="margin-top:clamp(2.5rem,5vw,4rem)">
+          <img src="assets/img/terminal.jpg" alt="A container ship alongside the quay with gantry cranes working the vessel." width="1280" height="720" loading="lazy" decoding="async">
+          <figcaption>Consolidation, documentation and custody at the terminal</figcaption>
+        </figure>
       </div>
     </div>
 
+    <!-- Every figure below is one the company itself publishes, and each is
+         labelled with the page it comes from. Different GML pages carry
+         different counts; they are deliberately NOT reconciled into one. -->
     <dl class="stats">
-      <div class="stats__i reveal"><dt>Founded</dt><dd data-count="2002" data-plain="1">2002</dd></div>
-      <div class="stats__i reveal"><dt>Offices</dt><dd data-count="21">21</dd></div>
-      <div class="stats__i reveal"><dt>Team members</dt><dd data-count="450" data-suffix="+">450+</dd></div>
-      <div class="stats__i reveal"><dt>Years of experience</dt><dd data-count="20" data-prefix="" data-suffix="+">20+</dd></div>
-    </dl>
-  </div>
-</section>
-
-<!-- ================= 3. THE JOURNEY, EXPLAINED ================= -->
-<section class="chain" id="chain">
-  <div class="wrap">
-    <p class="eyebrow reveal">Global logistics as a journey</p>
-    <h2 class="h2 reveal">Efficient, Reliable, and<br>Cost-Effective Logistics Solutions</h2>
-    <p class="chain__lede lede reveal">Air, surface and sea as modes of transportation, with the help of a global network and in-depth expertise in logistic technology.</p>
-
-    <ol class="chain__list">
-      <li class="chain__step reveal">
-        <span class="chain__no">01</span>
-        <h3>Road Haulage</h3>
-        <p>Ex-works pick up and door deliveries. Cargo is collected and moved to the consolidation point.</p>
-      </li>
-      <li class="chain__step reveal">
-        <span class="chain__no">02</span>
-        <h3>CFS &amp; Consolidation</h3>
-        <p>Container Freight Operations are performed at CFS, a warehouse where consolidation and deconsolidation of Cargo take place.</p>
-      </li>
-      <li class="chain__step reveal">
-        <span class="chain__no">03</span>
-        <h3>Ocean Leg</h3>
-        <p>LCL, FCL and NVOCC services with master consolidating, fast handling of documents and a globally uniform IT structure.</p>
-      </li>
-      <li class="chain__step reveal">
-        <span class="chain__no">04</span>
-        <h3>Global Network</h3>
-        <p>A vast network of partners and agents across the world, coordinated from a single streamlined point of contact.</p>
-      </li>
-      <li class="chain__step reveal">
-        <span class="chain__no">05</span>
-        <h3>Air Leg</h3>
-        <p>Contracts with major carriers, third country shipments, custom clearance and hazardous cargo handling.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ========================= 4. SERVICES ========================= -->
-<section class="svc" id="services">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow reveal">What we do</p>
-        <h2 class="h2 reveal">Safe And Reliable<br>Industry Solutions!</h2>
+      <div class="stats__i reveal">
+        <dt>Founded</dt>
+        <dd data-plain="1">2002</dd>
+        <span class="stats__src">Source — Home</span>
       </div>
-      <a class="link-arrow reveal" href="https://www.gmlindia.net/Service/OurServices">All services</a>
-    </div>
-
-    <div class="svc__grid">
-      <article class="svc__card svc__card--lg reveal">
-        <span class="svc__no">01</span>
-        <h3>Ocean Cargo</h3>
-        <p>Reliable and quick global shipment services with master consolidating, fast handling of documents, and a globally uniform IT structure.</p>
-        <ul class="svc__tags">
-          <li>LCL</li><li>FCL</li><li>NVOCC</li><li>CFS</li>
-        </ul>
-        <p class="svc__note">1650 destinations are serviced by LCL weekly.</p>
-        <a class="svc__go" href="https://www.gmlindia.net/Service/SeaFreight" aria-label="Ocean Cargo — read more">Read more</a>
-      </article>
-
-      <article class="svc__card reveal">
-        <span class="svc__no">02</span>
-        <h3>Air Cargo</h3>
-        <p>One of the key segments of logistics that GML is consistently expanding year on year basis with the help of a dedicated Air cargo team.</p>
-        <ul class="svc__tags">
-          <li>Door Deliveries</li><li>Ex-Works Pick up</li><li>Custom Clearance</li>
-        </ul>
-        <p class="svc__note">Pan-India Presence across 18 locations.</p>
-        <a class="svc__go" href="https://www.gmlindia.net/Service/AirFreight" aria-label="Air Cargo — read more">Read more</a>
-      </article>
-
-      <article class="svc__card reveal">
-        <span class="svc__no">03</span>
-        <h3>ISO Tank</h3>
-        <p>End-to-end logistics solutions for ISO Tank transportation, from import to export, with dedicated Empty Yards at each of our import locations.</p>
-        <ul class="svc__tags">
-          <li>Nhava-Sheva</li><li>Mundra</li><li>Chennai</li>
-        </ul>
-        <p class="svc__note">Specialized in gas tanks. T11 &middot; 25,000 litres &middot; 4 Bar.</p>
-        <a class="svc__go" href="https://www.gmlindia.net/Service/ISOTank" aria-label="ISO Tank — read more">Read more</a>
-      </article>
-
-      <article class="svc__card reveal">
-        <span class="svc__no">04</span>
-        <h3>Project Cargo</h3>
-        <p>GML takes pride in managing heavy international logistics of every size from start to finish in the interest of its global customers.</p>
-        <ul class="svc__tags">
-          <li>Steel production</li><li>Chemical plant</li><li>Power plant</li>
-        </ul>
-        <p class="svc__note">Reducing project complexity besides reducing the shipment cost.</p>
-        <a class="svc__go" href="https://www.gmlindia.net/Service/ProjectCargo" aria-label="Project Cargo — read more">Read more</a>
-      </article>
-
-      <article class="svc__card svc__card--haz reveal">
-        <span class="svc__no">05</span>
-        <h3>Hazardous Cargo</h3>
-        <p>One of the expert international shipping companies in handling hazardous goods, with trained teams ensuring compliance across sea, surface and air.</p>
-        <ol class="haz">
-          <li><b>1</b> Explosives</li>
-          <li><b>2</b> Gases</li>
-          <li><b>3</b> Flammable &amp; Combustible Liquids</li>
-          <li><b>4</b> Flammable Solids</li>
-          <li><b>5</b> Oxidizers &amp; Organic Peroxides</li>
-          <li><b>6</b> Poisons &amp; Infectious Substances</li>
-          <li><b>7</b> Radioactive Materials</li>
-          <li><b>8</b> Corrosives</li>
-          <li><b>9</b> Miscellaneous &amp; Lithium Batteries</li>
-        </ol>
-        <a class="svc__go" href="https://www.gmlindia.net/Service/HazardousCargo" aria-label="Hazardous Cargo — read more">Read more</a>
-      </article>
-
-      <article class="svc__card svc__card--sm reveal">
-        <span class="svc__no">&mdash;</span>
-        <h3>Warehouse</h3>
-        <p>Warehousing and storage solutions across the GML group network.</p>
-        <a class="svc__go" href="https://ilsol.net/" target="_blank" rel="noopener" aria-label="Warehouse — visit ilsol.net">Visit ilsol.net</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ========================== 5. WHY GML ========================== -->
-<section class="why" id="why">
-  <div class="wrap">
-    <p class="eyebrow reveal">Why GML</p>
-    <h2 class="h2 reveal">Innovative Solutions for<br>Your Logistics Challenges</h2>
-
-    <div class="why__grid">
-      <article class="why__i reveal">
-        <h3>Expertise and experience</h3>
-        <p>The GML has a team of experienced and knowledgeable professionals who have a deep understanding of the logistics industry.</p>
-      </article>
-      <article class="why__i reveal">
-        <h3>Customized solutions</h3>
-        <p>The GML offers customized logistics solutions tailored to the specific needs of each client.</p>
-      </article>
-      <article class="why__i reveal">
-        <h3>Global network</h3>
-        <p>Greenwich Meridian Logistics has a vast network of partners and agents across the world.</p>
-      </article>
-      <article class="why__i reveal">
-        <h3>People-focused approach</h3>
-        <p>We never lose sight of the fact that our existence and services are about people, both domestically and overseas.</p>
-      </article>
-    </div>
+      <div class="stats__i reveal">
+        <dt>Offices</dt>
+        <dd data-count="21">21</dd>
+        <span class="stats__src">Source — About Us</span>
+      </div>
+      <div class="stats__i reveal">
+        <dt>Team members</dt>
+        <dd data-count="450" data-suffix="+">450+</dd>
+        <span class="stats__src">Source — About Us</span>
+      </div>
+      <div class="stats__i reveal">
+        <dt>Years of experience</dt>
+        <dd data-count="20" data-suffix="+">20+</dd>
+        <span class="stats__src">Source — About Us</span>
+      </div>
+    </dl>
 
     <div class="vm">
       <blockquote class="vm__i reveal">
@@ -462,14 +395,214 @@
         <p class="eyebrow">Mission</p>
         <p>GML pursues a mission to move forward with a selective approach to build a global transport and logistics business that transcends business growth.</p>
       </blockquote>
+      <blockquote class="vm__i reveal">
+        <p class="eyebrow">Quality Policy</p>
+        <p>Greenwich Meridian Logistics (India) Pvt. Ltd. believes that the service quality of an organization and wider reach to destinations is the best route to achieve growth and customer satisfaction.</p>
+      </blockquote>
     </div>
   </div>
 </section>
 
-<!-- ======================= 6. LEADERSHIP ======================= -->
-<section class="lead" id="leadership">
+<!-- ================ THE CHAIN — how a shipment actually moves ================ -->
+<section class="sec chain" id="chain" data-sc="top bottom | top center">
   <div class="wrap">
-    <p class="eyebrow reveal">Director's Note</p>
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow reveal">Global logistics as a journey</p>
+        <h2 class="h2 reveal">Efficient, Reliable, and<br>Cost-Effective <em class="ser">Logistics Solutions</em></h2>
+      </div>
+      <p class="lede reveal" style="max-width:38ch">Air, surface and sea as modes of transportation, with the help of a global network and in-depth expertise in logistic technology.</p>
+    </div>
+
+    <ol class="chain__list" data-sc="top center | bottom bottom">
+      <div class="chain__spine" aria-hidden="true"><i></i></div>
+      <li class="chain__step reveal">
+        <div class="chain__row">
+          <span class="chain__no">01</span>
+          <h3>Road Haulage</h3>
+          <p>Ex-works pick up and door deliveries. Cargo is collected and moved to the consolidation point.</p>
+        </div>
+      </li>
+      <li class="chain__step reveal">
+        <div class="chain__row">
+          <span class="chain__no">02</span>
+          <h3>CFS &amp; Consolidation</h3>
+          <p>Container Freight Operations are performed at CFS, a warehouse where consolidation and deconsolidation of Cargo take place.</p>
+        </div>
+      </li>
+      <li class="chain__step reveal">
+        <div class="chain__row">
+          <span class="chain__no">03</span>
+          <h3>Ocean Leg</h3>
+          <p>LCL, FCL and NVOCC services with master consolidating, fast handling of documents and a globally uniform IT structure.</p>
+        </div>
+      </li>
+      <li class="chain__step reveal">
+        <div class="chain__row">
+          <span class="chain__no">04</span>
+          <h3>Global Network</h3>
+          <p>A vast network of partners and agents across the world, coordinated from a single streamlined point of contact.</p>
+        </div>
+      </li>
+      <li class="chain__step reveal">
+        <div class="chain__row">
+          <span class="chain__no">05</span>
+          <h3>Air Leg</h3>
+          <p>Contracts with major carriers, third country shipments, custom clearance and hazardous cargo handling.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CHAPTER 03 — SERVICES, TOLD SIDEWAYS ============
+     The section is tall, the stage inside it is sticky, and the reader's
+     ordinary vertical scroll of the document drives the track horizontally.
+     No nested scroller, no wheel capture. Below 1000px it is a plain stack. -->
+<section class="svc" id="services" data-sc="top top | bottom bottom"
+         data-sc-track=".svc__track" data-sc-stage=".svc__viewport"
+         aria-label="Chapter three: services">
+  <div class="svc__stage">
+    <div class="svc__head">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow reveal">What we do</p>
+          <h2 class="h2 reveal">Safe And Reliable<br><em class="ser">Industry Solutions!</em></h2>
+        </div>
+        <a class="link-arrow reveal" href="https://www.gmlindia.net/Service/OurServices">All services</a>
+      </div>
+    </div>
+
+    <div class="svc__viewport">
+      <div class="svc__track">
+
+        <article class="svc__card svc__card--wide">
+          <img class="svc__img" src="assets/img/ocean-cargo.jpg" alt="A container ship at berth being worked by gantry cranes." width="1280" height="720" loading="lazy" decoding="async">
+          <span class="svc__no">01</span>
+          <h3>Ocean Cargo</h3>
+          <p>Reliable and quick global shipment services with master consolidating, fast handling of documents, and a globally uniform IT structure.</p>
+          <ul class="svc__tags">
+            <li>LCL</li><li>FCL</li><li>NVOCC</li><li>CFS</li>
+            <li>DDU</li><li>DDP</li><li>Ex Works</li><li>Third Country</li>
+          </ul>
+          <p class="svc__note">1650 destinations are serviced by LCL weekly. <span class="dim">— Ocean Cargo (NVOCC)</span></p>
+          <a class="svc__go" href="https://www.gmlindia.net/Service/SeaFreight">Ocean Cargo</a>
+        </article>
+
+        <article class="svc__card">
+          <img class="svc__img" src="assets/img/air.jpg" alt="A GML India freighter aircraft cruising above a cloud deck." width="1280" height="720" loading="lazy" decoding="async">
+          <span class="svc__no">02</span>
+          <h3>Air Cargo</h3>
+          <p>One of the key segments of logistics that GML is consistently expanding year on year basis with the help of a dedicated Air cargo team.</p>
+          <ul class="svc__tags">
+            <li>Door Deliveries</li><li>Ex-Works Pick up</li><li>Third Country</li>
+            <li>Road Haulage</li><li>Custom Clearance</li>
+          </ul>
+          <p class="svc__note">Pan-India Presence across 18 locations. <span class="dim">— Air Cargo</span></p>
+          <a class="svc__go" href="https://www.gmlindia.net/Service/AirFreight">Air Cargo</a>
+        </article>
+
+        <article class="svc__card">
+          <img class="svc__img" src="assets/img/iso-tank.jpg" alt="Stacked containers in a terminal yard seen from above." width="860" height="656" loading="lazy" decoding="async">
+          <span class="svc__no">03</span>
+          <h3>ISO Tank</h3>
+          <p>End-to-end logistics solutions for ISO Tank transportation, from import to export, with dedicated Empty Yards at each of our import locations. Specialized in gas tanks.</p>
+          <ul class="svc__tags">
+            <li>Nhava-Sheva</li><li>Mundra</li><li>Chennai</li>
+            <li>T11</li><li>25,000 L</li><li>4 Bar MWP</li>
+          </ul>
+          <p class="svc__note">T11 UNPORTABLE &middot; 36,000 KG max gross &middot; approvals incl. IMDG T11, ASME VIII DIV 1, ADR/RID, CSC.</p>
+          <a class="svc__go" href="https://www.gmlindia.net/Service/ISOTank">ISO Tank</a>
+        </article>
+
+        <article class="svc__card svc__card--wide">
+          <img class="svc__img" src="assets/img/project.jpg" alt="Gantry cranes and container stacks at a working terminal." width="1280" height="720" loading="lazy" decoding="async">
+          <span class="svc__no">04</span>
+          <h3>Project Cargo</h3>
+          <p>GML takes pride in managing heavy international logistics of every size from start to finish in the interest of its global customers — from steel production to chemical plant, from the power plant to pharmaceutical, and beyond.</p>
+          <ul class="svc__tags">
+            <li>Steel production</li><li>Chemical plant</li><li>Power plant</li><li>Pharmaceutical</li>
+          </ul>
+          <p class="svc__note">Our project cargo team also focuses on reducing the project complexity besides reducing the shipment cost.</p>
+          <a class="svc__go" href="https://www.gmlindia.net/Service/ProjectCargo">Project Cargo</a>
+        </article>
+
+        <article class="svc__card svc__card--wide">
+          <img class="svc__img" src="assets/img/hazardous.jpg" alt="A container vessel alongside the quay." width="860" height="674" loading="lazy" decoding="async">
+          <span class="svc__no">05</span>
+          <h3>Hazardous Cargo</h3>
+          <p>A Hazmat is any material that poses a serious threat to health, property and safety when transported. GML is one of the expert international shipping companies in handling hazardous goods.</p>
+          <ol class="haz">
+            <li><b>1</b> Explosives</li>
+            <li><b>2</b> Gases</li>
+            <li><b>3</b> Flammable &amp; Combustible Liquids</li>
+            <li><b>4</b> Flammable Solids</li>
+            <li><b>5</b> Oxidizers &amp; Organic Peroxides</li>
+            <li><b>6</b> Poisons (Toxic) &amp; Infectious Substances</li>
+            <li><b>7</b> Radioactive Materials</li>
+            <li><b>8</b> Corrosives</li>
+            <li><b>9</b> Miscellaneous incl. Lithium Batteries</li>
+          </ol>
+          <a class="svc__go" href="https://www.gmlindia.net/Service/HazardousCargo">Hazardous Cargo</a>
+        </article>
+
+        <article class="svc__card">
+          <img class="svc__img" src="assets/img/road.jpg" alt="A container truck on a coastal highway." width="1280" height="720" loading="lazy" decoding="async">
+          <span class="svc__no">06</span>
+          <h3>Warehouse</h3>
+          <p>Warehousing and storage solutions across the GML group network, operated through ILS.</p>
+          <ul class="svc__tags"><li>Warehousing</li><li>Storage</li></ul>
+          <a class="svc__go" href="https://ilsol.net/" target="_blank" rel="noopener">Visit ilsol.net</a>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="svc__bar" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<!-- ==================== CHAPTER 04 — WHY GML ==================== -->
+<section class="sec why" id="why" data-sc="top bottom | top center">
+  <div class="wrap">
+    <div class="why__grid">
+      <div class="why__lead">
+        <p class="eyebrow reveal">Why GML</p>
+        <h2 class="h2 reveal">Innovative Solutions for<br>Your <em class="ser">Logistics Challenges</em></h2>
+        <p class="why__count reveal">Four reasons, in the company's <b>own words</b></p>
+      </div>
+
+      <div class="why__list">
+        <article class="why__i reveal">
+          <h3>Expertise and experience</h3>
+          <p>The GML has a team of experienced and knowledgeable professionals who have a deep understanding of the logistics industry.</p>
+        </article>
+        <article class="why__i reveal">
+          <h3>Customized solutions</h3>
+          <p>The GML offers customized logistics solutions tailored to the specific needs of each client.</p>
+        </article>
+        <article class="why__i reveal">
+          <h3>Global network</h3>
+          <p>Greenwich Meridian Logistics has a vast network of partners and agents across the world.</p>
+        </article>
+        <article class="why__i reveal">
+          <h3>People-focused approach</h3>
+          <p>We never lose sight of the fact that our existence and services are about people, both domestically and overseas.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIRECTOR'S NOTE ==================== -->
+<section class="sec lead" id="leadership" data-sc="top bottom | top center">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow reveal">Director's Note</p>
+        <h2 class="h2 reveal">Transportation and <em class="ser">technology</em>,<br>in the same sentence</h2>
+      </div>
+    </div>
     <div class="lead__grid">
       <blockquote class="lead__q reveal">
         <p>“GML is at the forefront of delivering innovative domestic and international logistics solutions using air, surface and sea as modes of transportation with the help of a global network and in-depth expertise in logistic technology.”</p>
@@ -480,108 +613,270 @@
         <footer><strong>Mr. Bhavesh Thakker</strong><span>Director</span></footer>
       </blockquote>
     </div>
-    <a class="link-arrow reveal" href="https://www.gmlindia.net/AboutUs/DirectorsNote">Read the full Director's Note</a>
+    <a class="link-arrow lead__more reveal" href="https://www.gmlindia.net/AboutUs/DirectorsNote">Read the full Director's Note</a>
   </div>
 </section>
 
-<!-- ================== 7. GLOBAL / INDIA PRESENCE ================== -->
-<section class="pres" id="locations">
+<!-- interlude — a frame from the supplied footage, opening as it is passed -->
+<figure class="strip" data-sc="top bottom | bottom top">
+  <img src="assets/img/containers.jpg" alt="Containers stacked in a terminal yard, seen from above." width="1280" height="720" loading="lazy" decoding="async">
+  <figcaption>
+    <p class="strip__q">A vast network of partners and agents across the world.</p>
+    <p class="strip__src">Why GML — Global network</p>
+  </figcaption>
+</figure>
+
+<!-- ============ CHAPTER 05 — THE GLOBAL NETWORK ============
+     Every point below is an office or associate the company publishes,
+     plotted from its real latitude and longitude on an equirectangular
+     projection with a true graticule. No map service, no invented city. -->
+<section class="sec net" id="locations" data-sc="top top | bottom bottom" aria-label="Chapter five: global network">
+  <div class="net__stage">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow reveal">Our Presence in India, Middle East, USA &amp; Canada</p>
+          <h2 class="h2 reveal">Wherever your cargo starts,<br>we are <em class="ser">already there</em></h2>
+        </div>
+        <a class="link-arrow reveal" href="https://www.gmlindia.net/AboutUs/GMLIndia">All locations</a>
+      </div>
+
+      <div class="net__map">
+        <svg class="net__svg" viewBox="0 0 185 62" role="img" aria-labelledby="netTitle netDesc" preserveAspectRatio="xMidYMid meet"
+             data-world="1.028 -4.48 0.35">
+          <title id="netTitle">GML office and associate locations</title>
+          <desc id="netDesc">An equirectangular plot of the 26 GML India offices and the group offices and associates in Dubai, Abu Dhabi, Kuwait, Muscat, Ontario and New Jersey, drawn from their real latitudes and longitudes. Every location is also written out as text below the plot.</desc>
+          <g class="net__view">
+            <g class="net__grat" aria-hidden="true">
+              <line x1="-140" y1="56" x2="340" y2="56"/>
+              <line x1="-140" y1="46" x2="340" y2="46"/>
+              <line x1="-140" y1="36" x2="340" y2="36"/>
+              <line x1="-140" y1="26" x2="340" y2="26"/>
+              <line x1="-140" y1="16" x2="340" y2="16"/>
+              <line x1="-140" y1="6" x2="340" y2="6"/>
+              <line x1="-140" y1="-4" x2="340" y2="-4"/>
+              <line x1="-40" y1="-60" x2="-40" y2="130"/>
+              <line x1="-30" y1="-60" x2="-30" y2="130"/>
+              <line x1="-20" y1="-60" x2="-20" y2="130"/>
+              <line x1="-10" y1="-60" x2="-10" y2="130"/>
+              <line x1="0" y1="-60" x2="0" y2="130"/>
+              <line x1="10" y1="-60" x2="10" y2="130"/>
+              <line x1="20" y1="-60" x2="20" y2="130"/>
+              <line x1="30" y1="-60" x2="30" y2="130"/>
+              <line x1="40" y1="-60" x2="40" y2="130"/>
+              <line x1="50" y1="-60" x2="50" y2="130"/>
+              <line x1="60" y1="-60" x2="60" y2="130"/>
+              <line x1="70" y1="-60" x2="70" y2="130"/>
+              <line x1="80" y1="-60" x2="80" y2="130"/>
+              <line x1="90" y1="-60" x2="90" y2="130"/>
+              <line x1="100" y1="-60" x2="100" y2="130"/>
+              <line x1="110" y1="-60" x2="110" y2="130"/>
+              <line x1="120" y1="-60" x2="120" y2="130"/>
+              <line x1="130" y1="-60" x2="130" y2="130"/>
+              <line x1="140" y1="-60" x2="140" y2="130"/>
+              <line x1="150" y1="-60" x2="150" y2="130"/>
+              <line x1="160" y1="-60" x2="160" y2="130"/>
+              <line x1="170" y1="-60" x2="170" y2="130"/>
+              <line x1="180" y1="-60" x2="180" y2="130"/>
+              <line x1="190" y1="-60" x2="190" y2="130"/>
+              <line x1="200" y1="-60" x2="200" y2="130"/>
+              <line x1="210" y1="-60" x2="210" y2="130"/>
+              <line x1="220" y1="-60" x2="220" y2="130"/>
+            </g>
+            <g class="net__arcs" aria-hidden="true">
+              <path class="net__arc" d="M162.88 36.92 Q154.07 27.86 145.27 30.8"/>
+              <path class="net__arc" d="M162.88 36.92 Q153.63 28.23 144.38 31.55"/>
+              <path class="net__arc" d="M162.88 36.92 Q150.44 23.77 137.99 26.62"/>
+              <path class="net__arc" d="M162.88 36.92 Q155.64 29.66 148.41 32.41"/>
+              <path class="net__arc" d="M162.88 36.92 Q89.34 11.06 15.8 15.2"/>
+              <path class="net__arc" d="M162.88 36.92 Q86.62 7.66 10.36 12.41"/>
+            </g>
+            <g class="net__region" data-region="india" data-view="1.964 -240.54 -39.61">
+              <circle class="net__dot" cx="162.58" cy="32.97"/>
+              <circle class="net__dot" cx="168.08" cy="28.1"/>
+              <circle class="net__dot" cx="167.59" cy="43.03"/>
+              <text class="net__lbl" x="169.09" y="43.83" text-anchor="start">Bangalore</text>
+              <circle class="net__dot" cx="172.57" cy="30.61"/>
+              <circle class="net__dot" cx="170.27" cy="42.92"/>
+              <circle class="net__dot" cx="166.96" cy="44.98"/>
+              <circle class="net__dot" cx="167.21" cy="27.39"/>
+              <circle class="net__dot" cx="168.49" cy="38.61"/>
+              <circle class="net__dot" cx="165.79" cy="29.09"/>
+              <text class="net__lbl" x="167.29" y="29.89" text-anchor="start">Jaipur</text>
+              <circle class="net__dot" cx="165.58" cy="24.67"/>
+              <text class="net__lbl" x="167.08" y="25.47" text-anchor="start">Jalandhar</text>
+              <circle class="net__dot" cx="170.33" cy="29.55"/>
+              <circle class="net__dot" cx="168.08" cy="45.04"/>
+              <text class="net__lbl" x="169.58" y="45.84" text-anchor="start">Karur</text>
+              <circle class="net__dot" cx="166.27" cy="46.07"/>
+              <circle class="net__dot" cx="178.36" cy="33.43"/>
+              <text class="net__lbl" x="176.86" y="34.23" text-anchor="end">Kolkata</text>
+              <circle class="net__dot" cx="165.86" cy="25.1"/>
+              <circle class="net__dot" cx="167.71" cy="27.02"/>
+              <circle class="net__dot" cx="168.77" cy="27.16"/>
+              <circle class="net__dot net__dot--hq" cx="162.88" cy="36.92"/>
+              <circle class="net__ring" cx="162.88" cy="36.92"/>
+              <text class="net__lbl net__lbl--hq" x="164.38" y="37.72" text-anchor="start">Mumbai — HQ</text>
+              <circle class="net__dot" cx="163.86" cy="37.48"/>
+              <circle class="net__dot" cx="160.8" cy="33.7"/>
+              <circle class="net__dot" cx="167.02" cy="27.01"/>
+              <text class="net__lbl" x="168.52" y="27.81" text-anchor="start">Sonipat</text>
+              <circle class="net__dot" cx="162.83" cy="34.83"/>
+              <circle class="net__dot" cx="167.34" cy="44.89"/>
+              <circle class="net__dot" cx="168.13" cy="47.24"/>
+              <text class="net__lbl" x="169.63" y="48.04" text-anchor="start">Tuticorin</text>
+              <circle class="net__dot" cx="163.71" cy="31.42"/>
+              <text class="net__lbl" x="165.21" y="32.22" text-anchor="start">Udaipur</text>
+              <circle class="net__dot" cx="163.18" cy="33.69"/>
+              <text class="net__lbl" x="164.68" y="34.49" text-anchor="start">Vadodara</text>
+            </g>
+            <g class="net__region" data-region="middle-east" data-view="3.693 -436.29 -77.99">
+              <circle class="net__dot" cx="145.27" cy="30.8"/>
+              <text class="net__lbl" x="146.77" y="31.6" text-anchor="start">Dubai</text>
+              <circle class="net__dot" cx="144.38" cy="31.55"/>
+              <text class="net__lbl" x="145.88" y="33.15" text-anchor="start">Abu Dhabi</text>
+              <circle class="net__dot" cx="137.99" cy="26.62"/>
+              <text class="net__lbl" x="139.49" y="27.42" text-anchor="start">Kuwait</text>
+              <circle class="net__dot" cx="148.41" cy="32.41"/>
+              <text class="net__lbl" x="149.91" y="33.21" text-anchor="start">Muscat</text>
+            </g>
+            <g class="net__region" data-region="usa" data-view="3.444 38.08 -21.36">
+              <circle class="net__dot" cx="15.8" cy="15.2"/>
+              <text class="net__lbl" x="17.3" y="16.0" text-anchor="start">Glen Ridge, NJ</text>
+            </g>
+            <g class="net__region" data-region="canada" data-view="3.444 56.82 -11.75">
+              <circle class="net__dot" cx="10.36" cy="12.41"/>
+              <text class="net__lbl" x="11.86" y="13.21" text-anchor="start">Mississauga, ON</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="net__panel" role="tablist" aria-label="Region">
+        <button class="net__region-btn" type="button" role="tab" aria-selected="true"  aria-controls="net-india"       id="tab-india"       data-region="india">
+          <b>India</b><span>26 offices</span>
+        </button>
+        <button class="net__region-btn" type="button" role="tab" aria-selected="false" aria-controls="net-middle-east" id="tab-middle-east" data-region="middle-east">
+          <b>Middle East</b><span>Dubai · Abu Dhabi · Kuwait · Oman</span>
+        </button>
+        <button class="net__region-btn" type="button" role="tab" aria-selected="false" aria-controls="net-usa"         id="tab-usa"         data-region="usa">
+          <b>USA</b><span>New Jersey</span>
+        </button>
+        <button class="net__region-btn" type="button" role="tab" aria-selected="false" aria-controls="net-canada"      id="tab-canada"      data-region="canada">
+          <b>Canada</b><span>Ontario</span>
+        </button>
+      </div>
+
+      <div class="net__detail">
+        <div class="net__pane" id="net-india" role="tabpanel" aria-labelledby="tab-india" tabindex="0">
+          <ul class="net__cities">
+            <li>Ahmedabad</li><li>Aligarh</li><li>Bangalore</li><li>Bhadohi</li>
+            <li>Chennai</li><li>Coimbatore</li><li>Delhi NCR</li><li>Hyderabad</li>
+            <li>Jaipur</li><li>Jalandhar</li><li>Kanpur</li><li>Karur</li>
+            <li>Kochi</li><li>Kolkata</li><li>Ludhiana</li><li>Meerut</li>
+            <li>Moradabad</li><li class="is-hq">Mumbai <em>HQ</em></li><li>Pune</li><li>Rajkot</li>
+            <li>Sonipat</li><li>Surat</li><li>Tirupur</li><li>Tuticorin</li>
+            <li>Udaipur</li><li>Vadodara</li>
+          </ul>
+        </div>
+
+        <div class="net__pane" id="net-middle-east" role="tabpanel" aria-labelledby="tab-middle-east" tabindex="0" hidden>
+          <ul class="net__offices">
+            <li>
+              <span class="net__ctry">Dubai, UAE</span>
+              <strong>MFL Logistics LLC</strong>
+              <address>501 5th Floor, B Block, Shaikh Hamdan Award Complex, Jumeirah Beach Rd</address>
+              <a href="tel:+97143273333">+971 4 3273333</a>
+              <a href="mailto:sales@mfldubai.com">sales@mfldubai.com</a>
+              <a href="https://www.mfldubai.com" target="_blank" rel="noopener">www.mfldubai.com</a>
+            </li>
+            <li>
+              <span class="net__ctry">Abu Dhabi, UAE</span>
+              <strong>Integrity Logistics LLC</strong>
+              <address>Unit 1003, 10th Floor, Block B, Al Saman Tower, Hamdan Street, Plot C-7, Sector E-8</address>
+              <a href="tel:+971502103424">+971 502103424</a>
+              <a href="mailto:sales@ilsuae.ae">sales@ilsuae.ae</a>
+            </li>
+            <li>
+              <span class="net__ctry">Kuwait</span>
+              <strong>MFL Global Sea &amp; Air Freight</strong>
+              <address>P.O. Box 15150, Al-Qibla, Fahd Al-Salem Street, Block 11, Qibla Area</address>
+              <a href="tel:+96522467172">+965 22467172</a>
+              <a href="mailto:info@mflkuwait.com">info@mflkuwait.com</a>
+            </li>
+            <li>
+              <span class="net__ctry">Muscat, Oman</span>
+              <strong>Meridian Freight Links Logistics LLC</strong>
+              <address>Room 32, 3rd Floor, Al Nadha Building, 322 Bait Al Falaj Street, Ruwi, Muscat</address>
+              <a href="mailto:info@mfloman.com">info@mfloman.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="net__pane" id="net-usa" role="tabpanel" aria-labelledby="tab-usa" tabindex="0" hidden>
+          <ul class="net__offices">
+            <li>
+              <span class="net__ctry">New Jersey, USA</span>
+              <strong>Greenwich Meridian Logistics (USA) LLC</strong>
+              <address>926 Bloomfield Ave, Suite BB, Glen Ridge, NJ 07028</address>
+              <a href="mailto:info@gmlusa.net">info@gmlusa.net</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="net__pane" id="net-canada" role="tabpanel" aria-labelledby="tab-canada" tabindex="0" hidden>
+          <ul class="net__offices">
+            <li>
+              <span class="net__ctry">Ontario, Canada</span>
+              <strong>Greenwich Meridian Lines Canada Inc.</strong>
+              <address>1515 Britannia Rd East, Suite 311, Mississauga, Ontario L4W 4K1</address>
+              <a href="tel:+19055651920">+1 905 565 1920</a>
+              <a href="mailto:info@gmlcanada.com">info@gmlcanada.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Both figures are the homepage's own published statistics. -->
+      <dl class="stats stats--2" style="margin-top:clamp(2rem,4vw,3rem)">
+        <div class="stats__i reveal"><dt>Locations</dt><dd data-plain="1">1K+</dd><span class="stats__src">Source — Home</span></div>
+        <div class="stats__i reveal"><dt>Locations in India</dt><dd data-count="22" data-suffix="+">22+</dd><span class="stats__src">Source — Home</span></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== INDUSTRY SOLUTIONS ==================== -->
+<section class="sec ind" id="industries" data-sc="top bottom | top center">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <p class="eyebrow reveal">Our Presence in India, Middle East, USA &amp; Canada</p>
-        <h2 class="h2 reveal">Wherever your cargo starts,<br>we are already there</h2>
-      </div>
-      <a class="link-arrow reveal" href="https://www.gmlindia.net/AboutUs/GMLIndia">All locations</a>
-    </div>
-
-    <!-- Both figures are the homepage's own published statistics. No derived or
-         combined numbers are shown here. -->
-    <dl class="stats stats--wide">
-      <div class="stats__i reveal"><dt>Locations</dt><dd data-plain="1">1K+</dd></div>
-      <div class="stats__i reveal"><dt>Locations in India</dt><dd data-count="22" data-suffix="+">22+</dd></div>
-    </dl>
-
-    <div class="pres__grid">
-      <div class="pres__col reveal">
-        <h3 class="pres__ttl">India</h3>
-        <ul class="pres__cities">
-          <li>Ahmedabad</li><li>Aligarh</li><li>Bangalore</li><li>Bhadohi</li>
-          <li>Chennai</li><li>Coimbatore</li><li>Delhi NCR</li><li>Hyderabad</li>
-          <li>Jaipur</li><li>Jalandhar</li><li>Kanpur</li><li>Karur</li>
-          <li>Kochi</li><li>Kolkata</li><li>Ludhiana</li><li>Meerut</li>
-          <li>Moradabad</li><li class="is-hq">Mumbai <em>HQ</em></li><li>Pune</li><li>Rajkot</li>
-          <li>Sonipat</li><li>Surat</li><li>Tirupur</li><li>Tuticorin</li>
-          <li>Udaipur</li><li>Vadodara</li>
-        </ul>
-      </div>
-
-      <div class="pres__col reveal">
-        <h3 class="pres__ttl">Group &amp; Associates</h3>
-        <ul class="pres__intl">
-          <li>
-            <span class="pres__ctry">Dubai, UAE</span>
-            <strong>MFL Logistics LLC</strong>
-            <a href="tel:+97143273333">+971 4 3273333</a>
-            <a href="mailto:sales@mfldubai.com">sales@mfldubai.com</a>
-          </li>
-          <li>
-            <span class="pres__ctry">Abu Dhabi, UAE</span>
-            <strong>Integrity Logistics LLC</strong>
-            <a href="tel:+971502103424">+971 502103424</a>
-            <a href="mailto:sales@ilsuae.ae">sales@ilsuae.ae</a>
-          </li>
-          <li>
-            <span class="pres__ctry">Kuwait</span>
-            <strong>MFL Global Sea &amp; Air Freight</strong>
-            <a href="tel:+96522467172">+965 22467172</a>
-            <a href="mailto:info@mflkuwait.com">info@mflkuwait.com</a>
-          </li>
-          <li>
-            <span class="pres__ctry">Muscat, Oman</span>
-            <strong>Meridian Freight Links Logistics LLC</strong>
-            <a href="mailto:info@mfloman.com">info@mfloman.com</a>
-          </li>
-          <li>
-            <span class="pres__ctry">Ontario, Canada</span>
-            <strong>Greenwich Meridian Lines Canada Inc.</strong>
-            <a href="tel:+19055651920">+1 905 565 1920</a>
-            <a href="mailto:info@gmlcanada.com">info@gmlcanada.com</a>
-          </li>
-          <li>
-            <span class="pres__ctry">New Jersey, USA</span>
-            <strong>Greenwich Meridian Logistics (USA) LLC</strong>
-            <a href="mailto:info@gmlusa.net">info@gmlusa.net</a>
-          </li>
-        </ul>
+        <p class="eyebrow reveal">Sectors we serve</p>
+        <h2 class="h2 reveal">From steel production to chemical plant,<br>from the power plant to <em class="ser">pharmaceutical</em></h2>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ======================== 8. INDUSTRIES ======================== -->
-<section class="ind" id="industries">
-  <div class="wrap">
-    <p class="eyebrow reveal">Sectors we serve</p>
-    <h2 class="h2 reveal">From steel production to chemical plant,<br>from the power plant to pharmaceutical</h2>
     <ul class="ind__grid">
-      <li class="reveal"><span>01</span>Automobile</li>
-      <li class="reveal"><span>02</span>Textile</li>
-      <li class="reveal"><span>03</span>Aviation</li>
-      <li class="reveal"><span>04</span>Pharma</li>
-      <li class="reveal"><span>05</span>Food</li>
-      <li class="reveal"><span>06</span>Agriculture</li>
-      <li class="reveal"><span>07</span>Chemical</li>
-      <li class="reveal"><span>08</span>Oil &amp; Natural Gas</li>
+      <li class="reveal"><span>01</span><b>Automobile</b></li>
+      <li class="reveal"><span>02</span><b>Textile</b></li>
+      <li class="reveal"><span>03</span><b>Aviation</b></li>
+      <li class="reveal"><span>04</span><b>Pharma</b></li>
+      <li class="reveal"><span>05</span><b>Food</b></li>
+      <li class="reveal"><span>06</span><b>Agriculture</b></li>
+      <li class="reveal"><span>07</span><b>Chemical</b></li>
+      <li class="reveal"><span>08</span><b>Oil &amp; Natural Gas</b></li>
     </ul>
   </div>
 </section>
 
-<!-- ======================= 9. CASE STUDIES ======================= -->
-<section class="cases" id="cases">
+<!-- ==================== MAJOR SHIPMENTS ==================== -->
+<section class="sec cases" id="cases" data-sc="top bottom | top center">
   <div class="wrap">
-    <p class="eyebrow reveal">Major shipments</p>
-    <h2 class="h2 reveal">Shipment of Tesla, Ferrari &amp; Audi<br>Handled by GML India</h2>
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow reveal">Major shipments</p>
+        <h2 class="h2 reveal">Shipment of Tesla, Ferrari &amp; Audi<br><em class="ser">Handled by GML India</em></h2>
+      </div>
+    </div>
 
     <div class="cases__grid">
       <article class="case reveal">
@@ -606,59 +901,73 @@
   </div>
 </section>
 
-<!-- ============ 10. CERTIFICATIONS / MEMBERSHIPS ============ -->
-<section class="cert" id="certifications">
+<!-- ============ CERTIFICATIONS &amp; MEMBERSHIPS ============ -->
+<section class="sec cert" id="certifications" data-sc="top bottom | top center">
   <div class="wrap">
-    <p class="eyebrow reveal">GML takes pride in being registered with</p>
-    <h2 class="h2 reveal">Certification &amp; Membership<br>Of Global Network</h2>
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow reveal">GML takes pride in being registered with</p>
+        <h2 class="h2 reveal">Certification &amp; Membership<br>Of <em class="ser">Global Network</em></h2>
+      </div>
+      <a class="link-arrow reveal" href="https://www.gmlindia.net/AboutUs/GMLAffiliation">GML Incorporation</a>
+    </div>
 
     <div class="cert__grid">
       <div class="cert__col reveal">
         <h3 class="cert__ttl">Registrations &amp; Certifications</h3>
-        <ul class="cert__list">
-          <li><strong>Directorate General of Shipping, Govt of India</strong><span>MTO/DGS/369/MAR/2025</span></li>
-          <li><strong>The Federal Maritime Commission, U.S.A.</strong><span>Bond number: 91070</span></li>
-          <li><strong>ISO 9001: 2015 Certification</strong></li>
-          <li><strong>Authorized Economic Operator (AEO)</strong><span>with Indian Customs</span></li>
-          <li><strong>C-TPAT</strong><span>Custom Trade Partnership Against Terrorism</span></li>
-          <li><strong>NHAVA SHEVA</strong><span>Ports &amp; Customs</span></li>
-          <li><strong>MBPT</strong><span>Port &amp; Customs</span></li>
-          <li><strong>International Air Transport Association (IATA)</strong><span>for Mumbai</span></li>
-          <li><strong>Ministry of Micro, Small &amp; Medium Enterprises (MSME)</strong><span>Govt. of India</span></li>
+        <ul class="cert__list" data-cert-logos>
+          <li data-logo="dgs"><strong>Directorate General of Shipping, Govt of India</strong><span>MTO/DGS/369/MAR/2025</span></li>
+          <li data-logo="fmc"><strong>The Federal Maritime Commission, U.S.A.</strong><span>Bond number: 91070</span></li>
+          <li data-logo="iso9001"><strong>ISO 9001: 2015 Certification</strong></li>
+          <li data-logo="aeo"><strong>Authorized Economic Operator (AEO)</strong><span>with Indian Customs</span></li>
+          <li data-logo="ctpat"><strong>C-TPAT</strong><span>Custom Trade Partnership Against Terrorism</span></li>
+          <li data-logo="nhavasheva"><strong>NHAVA SHEVA</strong><span>Ports &amp; Customs</span></li>
+          <li data-logo="mbpt"><strong>MBPT</strong><span>Port &amp; Customs</span></li>
+          <li data-logo="iata"><strong>International Air Transport Association (IATA)</strong><span>for Mumbai</span></li>
+          <li data-logo="msme"><strong>Ministry of Micro, Small &amp; Medium Enterprises (MSME)</strong><span>Govt. of India</span></li>
         </ul>
       </div>
       <div class="cert__col reveal">
         <h3 class="cert__ttl">Global Network Memberships</h3>
-        <ul class="cert__list cert__list--plain">
-          <li><strong>Consolidators Association of India (CAI)</strong></li>
-          <li><strong>Federation of Freight Forwarders' Associations in India (FFFAI)</strong></li>
-          <li><strong>FIATA International</strong></li>
-          <li><strong>NORTHSTAR GLOBAL FCL FORWARDERS ALLIANCE</strong></li>
-          <li><strong>Overseas Project Cargo Association (OPCA)</strong></li>
-          <li><strong>U-Connect Worldwide Network</strong></li>
-          <li><strong>Tank Container Development Alliance (TCDA)</strong></li>
-          <li><strong>WCA Inter Global</strong></li>
+        <ul class="cert__list" data-cert-logos>
+          <li data-logo="cai"><strong>Consolidators Association of India (CAI)</strong></li>
+          <li data-logo="fffai"><strong>Federation of Freight Forwarders' Associations in India (FFFAI)</strong></li>
+          <li data-logo="fiata"><strong>FIATA International</strong></li>
+          <li data-logo="northstar"><strong>NORTHSTAR GLOBAL FCL FORWARDERS ALLIANCE</strong></li>
+          <li data-logo="opca"><strong>Overseas Project Cargo Association (OPCA)</strong></li>
+          <li data-logo="uconnect"><strong>U-Connect Worldwide Network</strong></li>
+          <li data-logo="tcda"><strong>Tank Container Development Alliance (TCDA)</strong></li>
+          <li data-logo="wca"><strong>WCA Inter Global</strong></li>
         </ul>
-        <a class="link-arrow" href="https://www.gmlindia.net/AboutUs/GMLAffiliation">GML Incorporation</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============== 11. TRACK &amp; TRACE + INSTRUMENTS ============== -->
-<section class="tools" id="track">
+<!-- interlude — open water, between the register and the instruments -->
+<figure class="strip" data-sc="top bottom | bottom top">
+  <img src="assets/img/ocean.jpg" alt="Open ocean seen from altitude as the camera lifts away from the port." width="1280" height="720" loading="lazy" decoding="async">
+  <figcaption>
+    <p class="strip__q">1650 destinations are serviced by LCL weekly.</p>
+    <p class="strip__src">Ocean Cargo — NVOCC</p>
+  </figcaption>
+</figure>
+
+<!-- ============ CHAPTER 06 — INSTRUMENTS &amp; TRACK AND TRACE ============ -->
+<section class="sec tools" id="track" data-sc="top bottom | top center">
   <div class="wrap">
     <div class="sec-head">
       <div>
         <p class="eyebrow reveal">Instruments</p>
-        <h2 class="h2 reveal">Track what is already moving</h2>
+        <h2 class="h2 reveal">Track what is <em class="ser">already moving</em></h2>
       </div>
+      <p class="lede reveal" style="max-width:34ch">The original GML instruments, on the same surface as the rest of the site.</p>
     </div>
 
     <div class="tools__grid">
 
       <form class="tool tool--track reveal" id="trackForm" novalidate>
-        <h3 class="tool__ttl">Tracking</h3>
+        <h3 class="tool__ttl">Track &amp; Trace</h3>
         <div class="tool__tabs" role="tablist" aria-label="Reference type">
           <button type="button" role="tab" aria-selected="true"  data-ref="HBL No.">HBL No.</button>
           <button type="button" role="tab" aria-selected="false" data-ref="Shipping Bill No.">Shipping Bill No.</button>
@@ -670,11 +979,11 @@
           <input id="trackRef" name="ref" type="text" autocomplete="off" required placeholder="Enter reference number">
         </div>
         <p class="tool__err" id="trackErr" role="alert" hidden></p>
-        <button class="btn btn--solid btn--full" type="submit">Start Tracking</button>
-        <p class="tool__hint">Opens the official GML tracking service.</p>
+        <button class="btn btn--gold btn--full" type="submit" style="margin-top:1.4rem">Start Tracking</button>
+        <p class="tool__hint">No shipment status is shown here. The reference is handed to the official GML tracking service, which is the only system that holds it.</p>
       </form>
 
-      <form class="tool tool--calc reveal" id="calcForm" novalidate>
+      <form class="tool tool--calc calc__form reveal" id="calcForm" novalidate>
         <h3 class="tool__ttl">Dimension Calculator</h3>
         <div class="calc__row">
           <div class="field"><label for="calcL">Length (cm)</label><input id="calcL" type="number" min="0" step="any" value="120"></div>
@@ -685,7 +994,10 @@
           <div class="field"><label for="calcQty">Pieces</label><input id="calcQty" type="number" min="1" step="1" value="1"></div>
           <div class="field"><label for="calcWt">Gross weight (kg)</label><input id="calcWt" type="number" min="0" step="any" value="250"></div>
           <div class="field"><label for="calcMode">Mode</label>
-            <select id="calcMode"><option value="sea">Sea (1 CBM = 1000 kg)</option><option value="air">Air (IATA 1:6000)</option></select>
+            <select id="calcMode">
+              <option value="sea">Sea (1 CBM = 1000 kg)</option>
+              <option value="air">Air (IATA 1:6000)</option>
+            </select>
           </div>
         </div>
         <output class="calc__out" id="calcOut" for="calcL calcW calcH calcQty calcWt calcMode"></output>
@@ -700,99 +1012,134 @@
           <li><a href="https://www.gmlindia.net/ETools/CurrencyConverter">Currency converter</a></li>
           <li><a href="https://www.gmlindia.net/Service/TypesOfContainer">Set of Containers</a></li>
           <li><a href="https://www.gmlindia.net/Vessel/VesselSchedule/Vessel-Schedule-Mumbai">Sailing Schedule</a></li>
+          <li><a href="https://www.gmlindia.net/ETools/FreightCalculator">Dimension Calculator</a></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== 12. QUOTE / CONTACT ==================== -->
-<section class="quote" id="quote">
+<!-- ============ CHAPTER 07 — REQUEST A QUOTE / CONTACT ============
+     Every field the live form asks for is preserved; the four steps only
+     decide what is on screen at once. No submission is ever reported as
+     successful unless a real endpoint says so. -->
+<section class="sec quote" id="quote" data-sc="top bottom | top center">
   <div class="wrap">
     <div class="quote__grid">
 
       <div class="quote__aside">
         <p class="eyebrow reveal">How Can We Help?</p>
-        <h2 class="h2 h2--light reveal">Tell us what is moving.</h2>
-        <p class="lede reveal">Please fill the form and our team will come back to you with a customized logistics solution.</p>
+        <h2 class="h2 reveal">Tell us what<br>is <em class="ser">moving</em>.</h2>
+        <p class="lede reveal" style="margin-top:1.6rem">Please fill the form and our team will come back to you with a customized logistics solution.</p>
 
         <div class="quote__contact reveal">
-          <h3>Head Office</h3>
-          <address>
-            504, Shrishti Plaza, Behind Amar Tara Plastics,<br>
-            Saki – Vihar Road, Powai, Andheri (E),<br>
-            Mumbai 400 072, India.
-          </address>
-          <h3>Quick Contact</h3>
-          <p>
-            <a href="tel:+912261489999">+91 22 6148 9999</a><br>
-            <a href="tel:+912261489910">+91 22 6148 9910</a><br>
-            <a href="mailto:info@gmlindia.net">info@gmlindia.net</a>
-          </p>
+          <div>
+            <h3>Head Office</h3>
+            <address>
+              504, Shrishti Plaza, Behind Amar Tara Plastics,<br>
+              Saki – Vihar Road, Powai, Andheri (E),<br>
+              Mumbai 400 072, India.
+            </address>
+          </div>
+          <div>
+            <h3>Quick Contact</h3>
+            <p>
+              <a href="tel:+912261489999">+91 22 6148 9999</a><br>
+              <a href="tel:+912261489910">+91 22 6148 9910</a><br>
+              <a href="mailto:info@gmlindia.net">info@gmlindia.net</a>
+            </p>
+          </div>
           <a class="btn btn--line" href="tel:+912261489999">Call For Support!</a>
         </div>
       </div>
 
-      <form class="qform reveal" id="quoteForm" novalidate>
-        <fieldset class="qform__seg">
-          <legend>Shipment</legend>
-          <div class="seg" role="radiogroup" aria-label="Direction">
-            <label><input type="radio" name="direction" value="Import" checked><span>Import</span></label>
-            <label><input type="radio" name="direction" value="Export"><span>Export</span></label>
-          </div>
-          <div class="seg" role="radiogroup" aria-label="Load type">
-            <label><input type="radio" name="load" value="LCL" checked><span>LCL</span></label>
-            <label><input type="radio" name="load" value="FCL"><span>FCL</span></label>
-            <label><input type="radio" name="load" value="Air"><span>Air</span></label>
-            <label><input type="radio" name="load" value="ISO TANK"><span>ISO TANK</span></label>
-          </div>
-        </fieldset>
+      <form class="qform reveal" id="quoteForm" novalidate aria-label="Request a quote">
+        <div class="qform__steps" role="tablist" aria-label="Quote steps">
+          <button type="button" role="tab" aria-selected="true"  aria-controls="qstep-1" id="qtab-1" data-step="1"><b>01</b><span>Shipment</span></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="qstep-2" id="qtab-2" data-step="2"><b>02</b><span>Cargo</span></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="qstep-3" id="qtab-3" data-step="3"><b>03</b><span>Contact</span></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="qstep-4" id="qtab-4" data-step="4"><b>04</b><span>Requirement</span></button>
+        </div>
 
-        <fieldset class="qform__seg">
-          <legend>Cargo nature</legend>
-          <div class="chips">
-            <label><input type="checkbox" name="nature" value="Haz"><span>Haz</span></label>
-            <label><input type="checkbox" name="nature" value="Non-Haz"><span>Non-Haz</span></label>
-            <label><input type="checkbox" name="nature" value="Refrigerated"><span>Refrigerated</span></label>
-            <label><input type="checkbox" name="nature" value="Fragile"><span>Fragile</span></label>
-          </div>
-        </fieldset>
+        <div class="qform__panel" id="qstep-1" role="tabpanel" aria-labelledby="qtab-1" tabindex="0">
+          <fieldset class="qform__seg">
+            <legend>Direction</legend>
+            <div class="seg" role="radiogroup" aria-label="Direction">
+              <label><input type="radio" name="direction" value="Import" checked><span>Import</span></label>
+              <label><input type="radio" name="direction" value="Export"><span>Export</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="qform__seg">
+            <legend>Load type</legend>
+            <div class="seg" role="radiogroup" aria-label="Load type">
+              <label><input type="radio" name="load" value="LCL" checked><span>LCL</span></label>
+              <label><input type="radio" name="load" value="FCL"><span>FCL</span></label>
+              <label><input type="radio" name="load" value="Air"><span>Air</span></label>
+              <label><input type="radio" name="load" value="ISO TANK"><span>ISO TANK</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="qform__seg">
+            <legend>Movement</legend>
+            <div class="chips chips--radio" role="radiogroup" aria-label="Movement">
+              <label><input type="radio" name="movement" value="CFS to CFS" checked><span>CFS to CFS</span></label>
+              <label><input type="radio" name="movement" value="Door to Door"><span>Door to Door</span></label>
+              <label><input type="radio" name="movement" value="Door to CFS"><span>Door to CFS</span></label>
+              <label><input type="radio" name="movement" value="CFS to Door"><span>CFS to Door</span></label>
+            </div>
+          </fieldset>
+        </div>
 
-        <fieldset class="qform__seg">
-          <legend>Movement</legend>
-          <div class="chips chips--radio" role="radiogroup" aria-label="Movement">
-            <label><input type="radio" name="movement" value="CFS to CFS" checked><span>CFS to CFS</span></label>
-            <label><input type="radio" name="movement" value="Door to Door"><span>Door to Door</span></label>
-            <label><input type="radio" name="movement" value="Door to CFS"><span>Door to CFS</span></label>
-            <label><input type="radio" name="movement" value="CFS to Door"><span>CFS to Door</span></label>
+        <div class="qform__panel" id="qstep-2" role="tabpanel" aria-labelledby="qtab-2" tabindex="0" hidden>
+          <fieldset class="qform__seg">
+            <legend>Cargo nature</legend>
+            <div class="chips">
+              <label><input type="checkbox" name="nature" value="Haz"><span>Haz</span></label>
+              <label><input type="checkbox" name="nature" value="Non-Haz"><span>Non-Haz</span></label>
+              <label><input type="checkbox" name="nature" value="Refrigerated"><span>Refrigerated</span></label>
+              <label><input type="checkbox" name="nature" value="Fragile"><span>Fragile</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="qCommodity">Commodities Details</label>
+            <textarea id="qCommodity" name="Commodities Details" rows="4"></textarea>
           </div>
-        </fieldset>
+          <div class="field field--file">
+            <label for="qFiles">Attach Documents</label>
+            <input id="qFiles" name="Attach Documents" type="file" multiple>
+            <p class="field__note" id="qFilesNote">Attachments are listed in your email draft; add the files before sending.</p>
+          </div>
+        </div>
 
-        <div class="qform__row">
-          <div class="field"><label for="qName">Name</label><input id="qName" name="Name" type="text" required autocomplete="name"></div>
-          <div class="field"><label for="qCompany">Company Name</label><input id="qCompany" name="Company Name" type="text" autocomplete="organization"></div>
+        <div class="qform__panel" id="qstep-3" role="tabpanel" aria-labelledby="qtab-3" tabindex="0" hidden>
+          <div class="qform__row">
+            <div class="field"><label for="qName">Name</label><input id="qName" name="Name" type="text" required autocomplete="name"></div>
+            <div class="field"><label for="qCompany">Company Name</label><input id="qCompany" name="Company Name" type="text" autocomplete="organization"></div>
+          </div>
+          <div class="qform__row">
+            <div class="field"><label for="qEmail">Email</label><input id="qEmail" name="Email" type="email" required autocomplete="email"></div>
+            <div class="field"><label for="qMobile">Mobile</label><input id="qMobile" name="Mobile" type="tel" required autocomplete="tel"></div>
+          </div>
         </div>
-        <div class="qform__row">
-          <div class="field"><label for="qEmail">Email</label><input id="qEmail" name="Email" type="email" required autocomplete="email"></div>
-          <div class="field"><label for="qMobile">Mobile</label><input id="qMobile" name="Mobile" type="tel" required autocomplete="tel"></div>
-        </div>
-        <div class="field">
-          <label for="qCommodity">Commodities Details</label>
-          <textarea id="qCommodity" name="Commodities Details" rows="3"></textarea>
-        </div>
-        <div class="field">
-          <label for="qReq">Requirement</label>
-          <textarea id="qReq" name="Requirement" rows="3" required></textarea>
-        </div>
-        <div class="field field--file">
-          <label for="qFiles">Attach Documents</label>
-          <input id="qFiles" name="Attach Documents" type="file" multiple>
-          <p class="field__note" id="qFilesNote">Attachments are listed in your email draft; add the files before sending.</p>
+
+        <div class="qform__panel" id="qstep-4" role="tabpanel" aria-labelledby="qtab-4" tabindex="0" hidden>
+          <div class="field">
+            <label for="qReq">Requirement</label>
+            <textarea id="qReq" name="Requirement" rows="6" required></textarea>
+          </div>
+          <div class="field">
+            <label for="qSummary">Summary</label>
+            <output class="calc__out" id="qSummary" style="margin-top:0;padding-top:0;border:0"></output>
+          </div>
         </div>
 
         <p class="qform__err" id="quoteErr" role="alert" hidden></p>
-        <button class="btn btn--solid btn--full btn--lg" type="submit">Submit Request</button>
-        <p class="qform__hint" id="quoteHint">Opens your email client addressed to info@gmlindia.net with the details below.</p>
+
+        <div class="qform__nav">
+          <button class="btn btn--line" type="button" id="qPrev" hidden>Back</button>
+          <button class="btn btn--line" type="button" id="qNext">Next</button>
+          <button class="btn btn--gold btn--lg" type="submit" id="qSubmit" hidden>Submit Request</button>
+        </div>
+        <p class="qform__hint" id="quoteHint">No endpoint is wired yet, so nothing here reports a successful submission: the form opens your email client addressed to info@gmlindia.net with the details you entered.</p>
       </form>
     </div>
   </div>
@@ -800,18 +1147,19 @@
 
 </main>
 
-<!-- =========================== FOOTER =========================== -->
+<!-- =============================== FOOTER =============================== -->
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr__top">
       <div class="ftr__brand">
         <a class="brand brand--ftr" href="https://www.gmlindia.net/">
+          <img class="brand__img" src="assets/brand/gml-logo.svg" alt="Greenwich Meridian Logistics (India) Pvt. Ltd." width="150" height="38" data-brand-logo>
           <span class="brand__mark" aria-hidden="true">
-            <svg viewBox="0 0 40 40" width="32" height="32" fill="none">
-              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
-              <path d="M20 2v36" stroke="currentColor" stroke-width="1.4"/>
-              <ellipse cx="20" cy="20" rx="8.4" ry="18" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
-              <path d="M2.6 13.4h34.8M2.6 26.6h34.8" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+            <svg viewBox="0 0 40 40" width="30" height="30" fill="none">
+              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.3" opacity=".4"/>
+              <path d="M20 2v36" stroke="currentColor" stroke-width="1.3"/>
+              <ellipse cx="20" cy="20" rx="8.4" ry="18" stroke="currentColor" stroke-width="1.3" opacity=".4"/>
+              <path d="M2.6 13.4h34.8M2.6 26.6h34.8" stroke="currentColor" stroke-width="1.3" opacity=".4"/>
             </svg>
           </span>
           <span class="brand__txt"><strong>GML<em>INDIA</em></strong><small>Greenwich Meridian Logistics</small></span>
@@ -859,6 +1207,8 @@
             <li><a href="https://www.gmlindia.net/Home/ContactUs">Contact Us</a></li>
             <li><a href="https://www.gmlindia.net/AboutUs/GMLIndia">Our Locations</a></li>
             <li><a href="https://ilsol.net/" target="_blank" rel="noopener">Warehousing</a></li>
+            <li><a href="login.html">Client Login</a></li>
+            <li><a href="register.html">Register</a></li>
           </ul>
         </div>
       </nav>
@@ -886,6 +1236,7 @@
   </div>
 </footer>
 
+<script src="assets/js/scroll.js" defer></script>
 <script src="assets/js/journey.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </body>

@@ -1,9 +1,14 @@
 /* ===========================================================================
-   GML — site behaviour: header, navigation, reveals, counters and the
+   GML — site behaviour
+   ---------------------------------------------------------------------------
+   Header, navigation, reveals, counters, the global network panel, and the
    working instruments (tracking hand-off, dimension calculator, quote form).
 
    Integration points live in GML_CONFIG so a backend can be wired in one place
-   without touching the rest of the file.
+   without touching the rest of the file. Nothing here invents a result: the
+   tracking form hands the reference to the official service, and the quote
+   form composes a real message rather than reporting a submission that did
+   not happen.
    =========================================================================== */
 (function () {
   'use strict';
@@ -12,15 +17,45 @@
     // Where "Start Tracking" sends the reference. Until GML's tracking API is
     // wired up this hands off to the official site rather than faking a result.
     trackUrl: 'https://www.gmlindia.net/',
-    // POST endpoint for the quote form. When null the form composes a mail
+    // POST endpoint for the quote form. While null the form composes a mail
     // draft to the real address instead of pretending to have submitted.
     quoteEndpoint: null,
-    quoteMailto: 'info@gmlindia.net'
+    quoteMailto: 'info@gmlindia.net',
+    // Set true once the official certification marks are present in
+    // assets/brand/certs/. Left false so the page never requests a file that
+    // is not there. See assets/brand/README.md.
+    certLogos: false
   };
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  /* ============================================================ BRAND ===
+     assets/brand/gml-logo.svg is the single drop-in slot for the official
+     artwork. If it resolves it is the logo; if it ever fails to load the
+     drawn meridian mark beside it stays visible instead. */
+  $$('[data-brand-logo]').forEach(function (img) {
+    function ok() { img.classList.add('is-ok'); }
+    if (img.complete && img.naturalWidth) ok();
+    img.addEventListener('load', ok);
+    img.addEventListener('error', function () { img.classList.remove('is-ok'); });
+  });
+
+  /* Certification marks are only requested when the real files are in place,
+     so the page never fires a request for artwork that does not exist. */
+  if (GML_CONFIG.certLogos) {
+    $$('[data-cert-logos] li[data-logo]').forEach(function (li) {
+      var img = new Image();
+      img.className = 'cert__logo';
+      img.alt = '';
+      img.addEventListener('load', function () {
+        img.classList.add('is-ok');
+        li.insertBefore(img, li.firstChild);
+      });
+      img.src = 'assets/brand/certs/' + li.dataset.logo + '.svg';
+    });
+  }
 
   /* =========================================================== HEADER === */
   var hdr = $('#hdr');
@@ -29,12 +64,11 @@
 
   function onScroll() {
     var y = window.scrollY;
-    // The header only turns solid once the cinematic hero is behind us; over
-    // the footage it stays transparent with a scrim.
+    // The header only turns solid once the cinematic chapter is behind us;
+    // over the footage it stays transparent with a scrim.
     var threshold = journey ? journey.offsetHeight - window.innerHeight * 0.6 : 80;
     hdr.classList.toggle('is-solid', y > threshold);
-    // hide on scroll-down, reveal on scroll-up (never over the hero)
-    if (y > threshold + 200) {
+    if (y > threshold + 240) {
       hdr.classList.toggle('is-hidden', y > lastY && y - lastY > 4);
     } else {
       hdr.classList.remove('is-hidden');
@@ -44,7 +78,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---- desktop dropdowns: hover + keyboard, one open at a time ---- */
+  /* ---- desktop mega menus: hover + keyboard, one open at a time ---- */
   $$('.nav__item.has-menu').forEach(function (item) {
     var trigger = $('.nav__trigger', item);
     var closeTimer;
@@ -66,7 +100,7 @@
     item.addEventListener('mouseleave', function () { closeTimer = setTimeout(function () { close(); }, 140); });
     trigger.addEventListener('click', function (e) {
       e.preventDefault();
-      item.classList.contains('is-open') ? close() : open();
+      if (item.classList.contains('is-open')) close(); else open();
     });
     item.addEventListener('focusin', open);
     item.addEventListener('focusout', function (e) {
@@ -83,7 +117,7 @@
     if (mnav && !mnav.hidden) closeMobile();
   });
 
-  /* ------------------------------ mobile nav ------------------------------ */
+  /* ------------------------------ mobile sheet ------------------------------ */
   var burger = $('#burger');
   var mnav = $('#mnav');
   var lastFocus = null;
@@ -105,12 +139,11 @@
   }
   if (burger && mnav) {
     burger.addEventListener('click', function () {
-      mnav.hidden ? openMobile() : closeMobile();
+      if (mnav.hidden) openMobile(); else closeMobile();
     });
     mnav.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') closeMobile();
     });
-    // keep focus inside the sheet while it is open
     mnav.addEventListener('keydown', function (e) {
       if (e.key !== 'Tab') return;
       var f = $$('a, summary, button', mnav).filter(function (n) { return n.offsetParent !== null; });
@@ -130,17 +163,19 @@
       if (!t) return;
       e.preventDefault();
       if (mnav && !mnav.hidden) closeMobile();
-      var top = t.getBoundingClientRect().top + window.scrollY - (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hdr-h'), 10) || 76) - 12;
+      var hdrH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hdr-h'), 10) || 74;
+      var top = t.getBoundingClientRect().top + window.scrollY - hdrH - 12;
       window.scrollTo({ top: top, behavior: reduced ? 'auto' : 'smooth' });
+      history.replaceState(null, '', id);
     });
   });
 
   /* ========================================================== REVEALS === */
   var revealables = $$('.reveal');
 
-  if (revealables.length) {
-    // Only now is it safe to hide anything: if this script had failed to run,
-    // the CSS would have left every section visible.
+  if (revealables.length && !reduced) {
+    // Only now is it safe to hide anything: had this script failed to run, the
+    // CSS would have left every section visible.
     document.documentElement.classList.add('has-reveal');
   }
 
@@ -161,14 +196,14 @@
         show(en.target);
         io.unobserve(en.target);
       });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
     revealables.forEach(function (el) { io.observe(el); });
 
     /* Safety net. IntersectionObserver callbacks are part of the rendering
-       lifecycle, so an occluded or throttled tab can leave them pending — and a
-       pending observer here would mean permanently invisible content. A cheap
-       geometric check on scroll guarantees anything on screen becomes
-       visible either way. */
+       lifecycle, so an occluded or throttled tab can leave them pending — and
+       a pending observer here would mean permanently invisible content. A
+       cheap geometric sweep guarantees anything on screen becomes visible
+       either way. */
     var pending = revealables.slice();
     var lastSweep = 0;
     function sweep() {
@@ -177,9 +212,7 @@
       for (var i = pending.length - 1; i >= 0; i--) {
         var el = pending[i];
         if (el.classList.contains('is-in')) { pending.splice(i, 1); continue; }
-        // Anything at or above the reveal line counts, including content the
-        // reader has already scrolled past.
-        if (el.getBoundingClientRect().top < h * 0.92) { show(el); io.unobserve(el); pending.splice(i, 1); }
+        if (el.getBoundingClientRect().top < h * 0.94) { show(el); io.unobserve(el); pending.splice(i, 1); }
       }
     }
     window.addEventListener('scroll', function () {
@@ -192,18 +225,17 @@
   /* ========================================================= COUNTERS === */
   var counters = $$('[data-count]');
   if (counters.length && !reduced && 'IntersectionObserver' in window) {
-    var DUR = 1300;
+    var DUR = 1400;
     var cio = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
         var el = en.target;
         cio.unobserve(el);
-        if (el.dataset.plain === '1') return;          // years are not counted up
+        if (el.dataset.plain === '1') return;
 
         // These are the company's real published figures. The tween is
         // decoration; the true value is the contract. If the animation frame
-        // stalls (occluded tab, low-power mode) this guarantees the correct
-        // number is what remains on screen, never a partial count.
+        // stalls this guarantees the correct number is what remains on screen.
         var final = el.textContent;
         var settle = setTimeout(function () { el.textContent = final; }, DUR + 300);
 
@@ -226,6 +258,91 @@
       });
     }, { threshold: 0.5 });
     counters.forEach(function (el) { cio.observe(el); });
+  }
+
+  /* =================================================== GLOBAL NETWORK ===
+     Four regions. Clicking a tab selects one; while the reader is simply
+     scrolling the chapter, the regions light up in turn on their own. A click
+     ends the automatic walk so the panel never fights the reader. */
+  var netSection = $('#locations');
+  if (netSection) {
+    var regionBtns = $$('.net__region-btn', netSection);
+    var regionOrder = regionBtns.map(function (b) { return b.dataset.region; });
+    var manual = false;
+    var current = -1;
+
+    var svg = $('.net__svg', netSection);
+
+    /* Move the camera to the region's real bounding box. The translate/scale
+       triple was computed from the actual latitudes and longitudes and lives
+       on the group in the markup, so nothing here invents geography. */
+    function frameRegion(view) {
+      if (!svg || !view) return;
+      var v = view.split(/\s+/);
+      svg.style.setProperty('--k', v[0]);
+      svg.style.setProperty('--tx', v[1]);
+      svg.style.setProperty('--ty', v[2]);
+    }
+
+    function selectRegion(i, fromUser) {
+      if (i === current) return;
+      current = i;
+      regionBtns.forEach(function (b, n) {
+        b.setAttribute('aria-selected', n === i ? 'true' : 'false');
+        var pane = document.getElementById(b.getAttribute('aria-controls'));
+        if (pane) pane.hidden = n !== i;
+      });
+      $$('.net__region', netSection).forEach(function (g) {
+        var on = g.dataset.region === regionOrder[i];
+        g.classList.toggle('is-on', on);
+        if (on) frameRegion(g.dataset.view);
+      });
+      if (fromUser) {
+        var pane = document.getElementById(regionBtns[i].getAttribute('aria-controls'));
+        if (pane) pane.focus({ preventScroll: true });
+      }
+    }
+
+    regionBtns.forEach(function (b, i) {
+      b.addEventListener('click', function () { manual = true; selectRegion(i, true); });
+      b.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        manual = true;
+        var n = (i + d + regionBtns.length) % regionBtns.length;
+        regionBtns[n].focus();
+        selectRegion(n, true);
+      });
+    });
+
+    // open on the whole network, so the arcs out of Mumbai read first
+    if (svg && svg.dataset.world) frameRegion(svg.dataset.world);
+    selectRegion(0, false);
+    if (svg && svg.dataset.world) frameRegion(svg.dataset.world);
+
+    if (window.GMLScroll && !reduced) {
+      var STEPS = [0.14, 0.38, 0.60, 0.80];
+      var worldShown = true;
+      window.GMLScroll.onTick(function () {
+        if (manual) return;
+        var p = window.GMLScroll.progressOf(netSection);
+        if (p <= 0 || p >= 1) return;
+        if (p < STEPS[0]) {
+          if (!worldShown) { worldShown = true; frameRegion(svg.dataset.world); }
+          return;
+        }
+        var want = 0;
+        for (var i = 0; i < STEPS.length; i++) if (p >= STEPS[i]) want = i;
+        if (worldShown) {
+          // coming off the world view, re-frame even if the region is unchanged
+          worldShown = false;
+          var g = $('.net__region.is-on', netSection);
+          if (want === current && g) frameRegion(g.dataset.view);
+        }
+        selectRegion(want, false);
+      });
+    }
   }
 
   /* ======================================================== TRACKING === */
@@ -256,8 +373,9 @@
         refInput.focus();
         return;
       }
-      // Hand off to the official tracking service. The reference is carried in
-      // the URL so the destination can pick it up once the endpoint is wired.
+      // Hand off to the official tracking service. Nothing is invented here:
+      // the reference travels in the URL so the destination can pick it up
+      // once the endpoint is wired.
       var url = GML_CONFIG.trackUrl +
         (GML_CONFIG.trackUrl.indexOf('?') > -1 ? '&' : '?') +
         'ref=' + encodeURIComponent(v) + '&type=' + encodeURIComponent(refType);
@@ -282,8 +400,7 @@
       var gross = num(fields[4], 0);
       var mode = fields[5].value;
 
-      // CBM per piece: cm -> m
-      var cbm = (L * W * H) / 1e6 * qty;
+      var cbm = (L * W * H) / 1e6 * qty;                 // cm -> m3, per piece
       // Air uses the IATA volumetric divisor of 6000 cm3/kg.
       // Sea/LCL is charged on the greater of CBM or weight tonnes (1 CBM = 1000 kg).
       var volKg = mode === 'air' ? (L * W * H) / 6000 * qty : cbm * 1000;
@@ -304,10 +421,18 @@
     recalc();
   }
 
-  /* ====================================================== QUOTE FORM === */
+  /* ====================================================== QUOTE FORM ===
+     Four declared steps over the one original form. Every field the live site
+     asks for is still present and still submitted; the steps only decide what
+     is on screen at once, and every step stays reachable by keyboard. */
   var quoteForm = $('#quoteForm');
   if (quoteForm) {
     var qErr = $('#quoteErr');
+    var tabs = $$('.qform__steps button', quoteForm);
+    var panels = $$('.qform__panel', quoteForm);
+    var btnPrev = $('#qPrev'), btnNext = $('#qNext'), btnSubmit = $('#qSubmit');
+    var summary = $('#qSummary');
+    var step = 0;
 
     function collect() {
       var fd = new FormData(quoteForm);
@@ -315,20 +440,58 @@
       return {
         'Direction': fd.get('direction') || '',
         'Load type': fd.get('load') || '',
-        'Cargo nature': nature.length ? nature.join(', ') : '',
         'Movement': fd.get('movement') || '',
+        'Cargo nature': nature.length ? nature.join(', ') : '',
+        'Commodities Details': (fd.get('Commodities Details') || '').trim(),
         'Name': (fd.get('Name') || '').trim(),
         'Company Name': (fd.get('Company Name') || '').trim(),
         'Email': (fd.get('Email') || '').trim(),
         'Mobile': (fd.get('Mobile') || '').trim(),
-        'Commodities Details': (fd.get('Commodities Details') || '').trim(),
         'Requirement': (fd.get('Requirement') || '').trim()
       };
     }
 
+    function renderSummary() {
+      var d = collect();
+      var rows = ['Direction', 'Load type', 'Movement', 'Cargo nature', 'Name', 'Company Name', 'Email', 'Mobile'];
+      summary.innerHTML = rows.map(function (k) {
+        return '<div>' + k + ' <em>' + (d[k] ? escapeHtml(d[k]) : '—') + '</em></div>';
+      }).join('');
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+
+    function goto(i, focusPanel) {
+      step = Math.max(0, Math.min(panels.length - 1, i));
+      tabs.forEach(function (t, n) {
+        t.setAttribute('aria-selected', n === step ? 'true' : 'false');
+        t.classList.toggle('is-done', n < step);
+      });
+      panels.forEach(function (p, n) { p.hidden = n !== step; });
+      btnPrev.hidden = step === 0;
+      btnNext.hidden = step === panels.length - 1;
+      btnSubmit.hidden = step !== panels.length - 1;
+      if (step === panels.length - 1) renderSummary();
+      if (focusPanel) panels[step].focus({ preventScroll: true });
+      if (window.GMLScroll) window.GMLScroll.refresh();
+    }
+
+    tabs.forEach(function (t, i) { t.addEventListener('click', function () { goto(i, true); }); });
+    btnNext.addEventListener('click', function () { goto(step + 1, true); });
+    btnPrev.addEventListener('click', function () { goto(step - 1, true); });
+
     function markBad(input, bad) {
       var f = input.closest('.field');
       if (f) f.classList.toggle('is-bad', bad);
+    }
+
+    function stepOf(el) {
+      for (var i = 0; i < panels.length; i++) if (panels[i].contains(el)) return i;
+      return 0;
     }
 
     quoteForm.addEventListener('submit', function (e) {
@@ -342,19 +505,22 @@
         { el: $('#qReq'), label: 'Requirement' }
       ];
       var missing = [];
+      var firstBad = null;
       required.forEach(function (r) {
         var empty = !r.el.value.trim();
         var badEmail = r.label === 'Email' && r.el.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(r.el.value.trim());
         markBad(r.el, empty || badEmail);
-        if (empty) missing.push(r.label);
-        else if (badEmail) missing.push('a valid Email');
+        if (empty || badEmail) {
+          missing.push(badEmail ? 'a valid Email' : r.label);
+          if (!firstBad) firstBad = r.el;
+        }
       });
 
       if (missing.length) {
         qErr.textContent = 'Please provide ' + missing.join(', ') + '.';
         qErr.hidden = false;
-        var firstBad = $('.field.is-bad input, .field.is-bad textarea');
-        if (firstBad) firstBad.focus();
+        goto(stepOf(firstBad), false);
+        firstBad.focus();
         return;
       }
 
@@ -362,11 +528,12 @@
       var files = $('#qFiles').files;
 
       if (GML_CONFIG.quoteEndpoint) {
-        var payload = new FormData(quoteForm);
-        fetch(GML_CONFIG.quoteEndpoint, { method: 'POST', body: payload })
+        fetch(GML_CONFIG.quoteEndpoint, { method: 'POST', body: new FormData(quoteForm) })
           .then(function (res) {
             if (!res.ok) throw new Error(res.status);
-            quoteForm.innerHTML = '<h3 class="tool__ttl">Thank you.</h3><p>Your request has reached our team. We will come back to you shortly.</p>';
+            quoteForm.innerHTML =
+              '<div class="qform__done"><h3 class="h3">Thank you.</h3>' +
+              '<p>Your request has reached our team. We will come back to you shortly.</p></div>';
           })
           .catch(function () {
             qErr.textContent = 'We could not send that. Please email info@gmlindia.net directly.';
@@ -375,8 +542,8 @@
         return;
       }
 
-      // No endpoint configured: compose a real message rather than show a fake
-      // success state.
+      // No endpoint configured: compose a real message rather than show a
+      // success state that did not happen.
       var lines = [];
       Object.keys(data).forEach(function (k) { if (data[k]) lines.push(k + ': ' + data[k]); });
       if (files && files.length) {
@@ -394,6 +561,8 @@
     $$('#quoteForm input, #quoteForm textarea').forEach(function (el) {
       el.addEventListener('input', function () { markBad(el, false); });
     });
+
+    goto(0, false);
   }
 
   /* ============================================================ MISC === */
