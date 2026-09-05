@@ -60,7 +60,14 @@
      everything for no visible gain. */
   var mobileSet = window.matchMedia('(max-width: 900px)').matches ||
                   (window.innerWidth * (window.devicePixelRatio || 1)) < 1100;
-  var DIR = mobileSet ? 'assets/frames/mobile/' : 'assets/frames/desktop/';
+
+  // Where the two frame sets are served from. The default is this site's own
+  // assets, which is what the repository ships and what you want in production.
+  // A deployment that would rather not carry ~30 MB of frames itself can point
+  // this at a CDN by setting `window.GML_FRAME_BASE` before this script runs —
+  // the file names and the loading strategy are unchanged either way.
+  var BASE = (window.GML_FRAME_BASE || 'assets/frames/').replace(/\/?$/, '/');
+  var DIR = BASE + (mobileSet ? 'mobile/' : 'desktop/');
 
   var images = new Array(FRAMES);
   var ready  = new Uint8Array(FRAMES);
